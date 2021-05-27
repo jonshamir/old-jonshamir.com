@@ -19,7 +19,7 @@ class ContourEffect extends React.Component {
   componentDidMount() {
     this.initScene();
     this.handleResize();
-    window.addEventListener("resize", (e) => this.handleResize(e));
+    window.addEventListener("resize", this.handleResize);
     window.addEventListener("scroll", this.handleScroll);
   }
 
@@ -77,12 +77,12 @@ class ContourEffect extends React.Component {
     uniforms.u_resolution.value.y = window.innerHeight;
   }
 
-  handleScroll = () => {
+  handleScroll() {
     const currScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
     uniforms.u_scroll.value = currScroll / 1000;
-  };
+  }
 
   render() {
     return <div className="ContourEffect" ref={this.canvasRef}></div>;

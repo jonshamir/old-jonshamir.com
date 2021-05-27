@@ -9,7 +9,7 @@ class JonLogo extends React.Component {
 
   render() {
     return (
-      <a
+      <div
         className="JonLogo"
         ref={(c) => {
           this.container = c;
@@ -51,7 +51,7 @@ class JonLogo extends React.Component {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     );
   }
 }

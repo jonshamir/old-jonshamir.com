@@ -4,11 +4,11 @@ import "./Nav.scss";
 
 const Nav = (props) => {
   return (
-    <nav className="Nav">
-      <a>About</a>
-      <a>Project</a>
-      <a>Contact</a>
-    </nav>
+    <ul className="Nav">
+      <li>About</li>
+      <li>Project</li>
+      <li>Contact</li>
+    </ul>
   );
 };
 
