@@ -6,13 +6,32 @@ const ProjectSection = (props) => {
   return (
     <div className="ProjectSection section">
       <h2>Recent Projects</h2>
-      <p>
-        I am interested in the intersection of art, science and design. I
-        believe that design is a powerful tool that has the ability to change
-        perceptions and reveal insights. I enjoy working on projects that
-        combine different disciplines into something greater than the sum of its
-        parts!
-      </p>
+      <div className="projectTiles">
+        <div className="ProjectTile">
+          <img src="images/projects/muser.jpg" />
+          <h3>
+            Muser <span>/ Smart music visualizer</span>
+          </h3>
+        </div>
+        <div className="ProjectTile">
+          <img src="images/projects/animations.jpg" />
+          <h3>
+            Animations <span>/ 2D & 3D</span>
+          </h3>
+        </div>
+        <div className="ProjectTile">
+          <img src="images/projects/unitycg.jpg" />
+          <h3>
+            UnityCG <span>/ Computer graphics course in Unity</span>
+          </h3>
+        </div>
+        <div className="ProjectTile">
+          <img src="images/projects/herbtree.jpg" />
+          <h3>
+            HerbTree <span>/ Interactive botanic visualization</span>
+          </h3>
+        </div>
+      </div>
     </div>
   );
 };

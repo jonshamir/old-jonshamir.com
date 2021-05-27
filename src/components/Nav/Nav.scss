@@ -1,0 +1,23 @@
+@use "src/utils" as *;
+
+.Nav {
+  position: fixed;
+  z-index: 150;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 3em;
+  writing-mode: vertical-lr;
+
+  a {
+    padding: 0.5em;
+    opacity: 0.5;
+    transition: opacity $transition-defaults;
+    color: pointer;
+
+    &:hover {
+      opacity: 1;
+      font-weight: bold;
+    }
+  }
+}
