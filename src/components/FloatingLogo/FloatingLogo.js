@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import JonLogo from "../JonLogo/JonLogo";
 
@@ -12,7 +12,7 @@ class FloatingLogo extends React.Component {
       isLoaded: false,
       isMinimized: false,
       inlinePos: [0, 0],
-      inlineOnScroll: props.history.location.pathname === "/",
+      isHomepage: props.history.location.pathname === "/",
     };
     this.inlineLogoEl = null;
   }
@@ -27,12 +27,12 @@ class FloatingLogo extends React.Component {
 
     this.props.history.listen((location, action) => {
       this.setState({
-        inlineOnScroll: false,
+        isHomepage: false,
       });
       if (location.pathname === "/") {
         setTimeout(() => {
           this.setState({
-            inlineOnScroll: true,
+            isHomepage: true,
           });
         }, 300);
       }
@@ -40,10 +40,9 @@ class FloatingLogo extends React.Component {
   }
 
   updateInlinePos = () => {
-    // const { x, y } = this.inlineLogoRef.current.getBoundingClientRect();
     this.inlineLogoEl = document.getElementById("logoInlinePos");
     if (this.inlineLogoEl) {
-      const x = this.inlineLogoEl.offsetLeft;
+      const x = this.inlineLogoEl.getBoundingClientRect().x;
       const y = this.inlineLogoEl.offsetTop;
       this.setState({ inlinePos: [x - 30, y - 180] });
     }
@@ -78,15 +77,21 @@ class FloatingLogo extends React.Component {
   };
 
   render() {
-    const { isMinimized, inlineOnScroll } = this.state;
+    const { isMinimized, isHomepage } = this.state;
     const { x, y } = this.getInlinePos();
     const logoTransform =
-      !inlineOnScroll || (this.inlineLogoEl && isMinimized)
+      !isHomepage || (this.inlineLogoEl && isMinimized)
         ? `scale(0.5)`
         : `scale(1) translate(${x}px,${y}px)`;
 
+    const styles = {
+      transform: logoTransform,
+      // pointerEvents: isHomepage ? "none" : "auto",
+    };
+
     return (
-      <div className="FloatingLogo" style={{ transform: logoTransform }}>
+      <div className="FloatingLogo" style={styles}>
+        {!isHomepage && <Link to="/" className="HomePageLink" />}
         <JonLogo isVisible={this.state.isLoaded} />
       </div>
     );

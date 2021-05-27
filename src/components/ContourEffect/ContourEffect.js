@@ -77,9 +77,12 @@ class ContourEffect extends React.Component {
   }
 
   handleResize(e) {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    uniforms.u_resolution.value.x = window.innerWidth;
-    uniforms.u_resolution.value.y = window.innerHeight;
+    const BORDER = 15 * 2;
+    const w = window.innerWidth - BORDER;
+    const h = window.innerHeight - BORDER;
+    renderer.setSize(w, h);
+    uniforms.u_resolution.value.x = w;
+    uniforms.u_resolution.value.y = h;
   }
 
   handleScroll() {

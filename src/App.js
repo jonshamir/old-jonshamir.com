@@ -16,9 +16,7 @@ const App = () => {
   return (
     <div>
       <ContourEffect shouldDisplay={location.pathname === "/"} />
-      <Link to="/">
-        <FloatingLogo />
-      </Link>
+      <FloatingLogo />
       <Nav />
       <SocialLinks />
       <AnimatePresence exitBeforeEnter>
