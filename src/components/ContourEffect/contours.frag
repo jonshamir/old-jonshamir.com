@@ -1,6 +1,7 @@
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
+uniform float u_scroll;
 uniform float u_pixel_ratio;
 
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -40,7 +41,7 @@ vec3 contours(float x, float levels) {
   float f = fract(x * levels);
   float df = fwidth(x * levels);
 
-  float y = smoothstep(df*4., df*4.5, f) + smoothstep(df*0.5, df*-0.0, f);
+  float y = smoothstep(df*2., df*2.5, f) + smoothstep(df*0.5, df*-0.0, f);
 
   // Invert colors & reduce contrast
   y = 1.0 - y;
@@ -56,29 +57,37 @@ vec3 contour_fill(float x, float levels) {
 }
 
 void main() {
-  vec2 mouse = vec2(u_mouse.x/u_resolution.x, 1.0 - u_mouse.y/u_resolution.y) * u_pixel_ratio;
-  mouse.x *= u_resolution.x/u_resolution.y;
-  vec2 st = gl_FragCoord.xy/u_resolution.xy;
-  st.x *= u_resolution.x/u_resolution.y;
+  vec2 mouse = vec2(u_mouse.x / u_resolution.x, 1.0 - u_mouse.y / u_resolution.y) * u_pixel_ratio;
+  mouse.x *= u_resolution.x / u_resolution.y;
+
+  float viewportRatio =  u_resolution.x / u_resolution.y;
+  vec2 st = gl_FragCoord.xy / u_resolution.xy; // UV coordinates
+  st.x *= viewportRatio;
+
+  float t = u_time * 0.005;
+
+  vec2 pos = vec2(st*(2.0 / u_pixel_ratio));
+  vec2 vel = vec2(u_time)*0.05; // Movement
+
+  // pos.y += u_scroll;
+
   vec3 color = vec3(0.0);
-  vec2 pos = vec2(st*(2.0/u_pixel_ratio));
+
 
   float DF = 0.0;
 
-  // Add a random position
   float a = 0.0;
-  vec2 vel = vec2(u_time*.04);
-  DF += snoise(pos+vel)*.25+.25;
+  DF += snoise(pos + vel + vec2(0, u_scroll)) * 0.25 + 0.25;
 
   // Add a random position
-  a = snoise(pos*vec2(cos(u_time*0.005), sin(u_time*0.005))*0.1)*3.1415;
+  a = snoise(pos*vec2(cos(t), sin(t))*0.1) * 3.1415;
   vel = vec2(cos(a), sin(a));
-  DF += snoise(pos+vel)*0.25+ 0.25;
+  DF += snoise(pos + vel) * 0.25 + 0.25;
 
   float x = fract(DF);
 
   // Mouse warp
-  x -= 0.1*pow((1.0 - clamp(0.0, 1.0, distance(st, mouse))), 2.0);
+  // x -= 0.1*pow((1.0 - clamp(0.0, 1.0, distance(st, mouse))), 2.0);
 
   color = contours(x, 7.0);
   //color = vec3(x,x,x);

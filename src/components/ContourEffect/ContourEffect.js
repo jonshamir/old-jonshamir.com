@@ -2,10 +2,13 @@ import React from "react";
 import * as THREE from "three";
 import "./ContourEffect.scss";
 
-const vertexShader = require("shader.vert");
-const fragmentShader = require("contours.frag");
+import vertexShader from "./shader.vert";
+import fragmentShader from "./contours.frag";
 
-console.log(THREE);
+let container;
+let camera, scene, renderer;
+let uniforms;
+const PIXEL_RATIO = 1; //window.devicePixelRatio || 1;
 
 class ContourEffect extends React.Component {
   constructor(props) {
@@ -15,13 +18,13 @@ class ContourEffect extends React.Component {
 
   componentDidMount() {
     this.initScene();
-    this.setCanvasSize();
-
+    this.handleResize();
     window.addEventListener("resize", (e) => this.handleResize(e));
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   initScene() {
-    container = this.canvasRef;
+    container = this.canvasRef.current;
 
     camera = new THREE.Camera();
     camera.position.z = 1;
@@ -35,6 +38,7 @@ class ContourEffect extends React.Component {
       u_pixel_ratio: { type: "f", value: PIXEL_RATIO },
       u_resolution: { type: "v2", value: new THREE.Vector2() },
       u_mouse: { type: "v2", value: new THREE.Vector2() },
+      u_scroll: { type: "f", value: 0 },
     };
 
     var material = new THREE.ShaderMaterial({
@@ -50,17 +54,21 @@ class ContourEffect extends React.Component {
     scene.add(mesh);
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setPixelRatio(window.devicePixelRatio);
+    // renderer.setPixelRatio(window.devicePixelRatio);
 
     container.appendChild(renderer.domElement);
-
-    onWindowResize();
-    window.addEventListener("resize", onWindowResize, false);
 
     document.onmousemove = function (e) {
       uniforms.u_mouse.value.x = e.pageX;
       uniforms.u_mouse.value.y = e.pageY;
     };
+
+    var animate = function () {
+      requestAnimationFrame(animate);
+      uniforms.u_time.value += 0.05;
+      renderer.render(scene, camera);
+    };
+    animate();
   }
 
   handleResize(e) {
@@ -69,28 +77,16 @@ class ContourEffect extends React.Component {
     uniforms.u_resolution.value.y = window.innerHeight;
   }
 
-  setCanvasSize() {
-    const w = document.documentElement.clientWidth;
-    const h = Math.min(document.documentElement.clientHeight, 750);
-    // updateGraphSize(w, h);
-  }
+  handleScroll = () => {
+    const currScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    uniforms.u_scroll.value = currScroll / 1000;
+  };
 
   render() {
-    return (
-      <div className="ContourEffect" ref={this.canvasRef}>
-        <div>Hello</div>
-      </div>
-    );
+    return <div className="ContourEffect" ref={this.canvasRef}></div>;
   }
 }
 
-function animate() {
-  requestAnimationFrame(animate);
-  render();
-}
-
-function render() {
-  uniforms.u_time.value += 0.05;
-  renderer.render(scene, camera);
-}
 export default ContourEffect;
