@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./ProjectSection.scss";
 
@@ -31,13 +32,17 @@ const ProjectSection = (props) => {
       <h2>Recent Projects</h2>
       <div className="projectTiles">
         {projectData.map((project) => (
-          <div className="ProjectTile" key={project.slug}>
+          <Link
+            to={`/project/${project.slug}`}
+            className="ProjectTile"
+            key={project.slug}
+          >
             <img src={`images/projects/${project.slug}.jpg`} alt="" />
             <h3>
               {project.name}
               <span> / {project.subtitle}</span>
             </h3>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

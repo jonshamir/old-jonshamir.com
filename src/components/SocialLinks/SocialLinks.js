@@ -11,7 +11,7 @@ const SocialLinks = (props) => {
         target="_blank"
         rel="noreferrer"
       >
-        <img src="images/instagram.svg" alt="" />
+        <img src="/images/instagram.svg" alt="" />
         <span>Instagram</span>
       </a>
       <a
@@ -20,7 +20,7 @@ const SocialLinks = (props) => {
         target="_blank"
         rel="noreferrer"
       >
-        <img src="images/github.svg" alt="" />
+        <img src="/images/github.svg" alt="" />
         <span>GitHub</span>
       </a>
       <a
@@ -29,7 +29,7 @@ const SocialLinks = (props) => {
         target="_blank"
         rel="noreferrer"
       >
-        <img src="images/resume.svg" alt="" />
+        <img src="/images/resume.svg" alt="" />
         <span>Resume</span>
       </a>
     </div>

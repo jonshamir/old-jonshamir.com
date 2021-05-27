@@ -23,6 +23,11 @@ class ContourEffect extends React.Component {
     window.addEventListener("scroll", this.handleScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   initScene() {
     container = this.canvasRef.current;
 
@@ -65,7 +70,7 @@ class ContourEffect extends React.Component {
 
     var animate = function () {
       requestAnimationFrame(animate);
-      uniforms.u_time.value += 0.05;
+      uniforms.u_time.value += 0.03;
       renderer.render(scene, camera);
     };
     animate();
@@ -85,7 +90,14 @@ class ContourEffect extends React.Component {
   }
 
   render() {
-    return <div className="ContourEffect" ref={this.canvasRef}></div>;
+    const { shouldDisplay } = this.props;
+    return (
+      <div
+        className="ContourEffect"
+        ref={this.canvasRef}
+        style={{ display: shouldDisplay ? "block" : "none" }}
+      ></div>
+    );
   }
 }
 

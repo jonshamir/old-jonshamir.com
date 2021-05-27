@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import Button from "../components/Button/Button";
 
+import "./ProjectPage.scss";
+
 const ProjectPage = (props) => {
   const { slug } = props.match.params;
 

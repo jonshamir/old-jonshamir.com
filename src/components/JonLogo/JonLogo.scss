@@ -22,6 +22,12 @@ $colors: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
   height: 180px;
   width: 180px;
   perspective: 5000px;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+
+  &.visible {
+    opacity: 1;
+  }
 
   & * {
     position: absolute;

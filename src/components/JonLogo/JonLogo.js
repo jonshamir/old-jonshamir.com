@@ -8,9 +8,10 @@ class JonLogo extends React.Component {
   }
 
   render() {
+    const { isVisible } = this.props;
     return (
-      <div className="logo-container">
-        <div className="rotate">
+      <div className={isVisible ? "logo-container visible" : "logo-container"}>
+        <div className={isVisible ? "rotate" : ""}>
           <div className="logo">
             <div className="top">
               <div className="face"></div>

@@ -9,6 +9,7 @@
   display: inline-block;
   cursor: pointer;
   vertical-align: bottom;
+  text-decoration: none;
 
   @media screen and (max-width: $tablet-width) {
     width: 46% !important;

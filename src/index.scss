@@ -39,6 +39,10 @@ p {
   max-width: 40em;
 }
 
+a {
+  color: $text-color !important;
+}
+
 .section {
   position: relative;
   z-index: 100;
