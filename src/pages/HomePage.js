@@ -1,14 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import IntroSection from "../components/IntroSection/IntroSection";
 import ProjectSection from "../components/ProjectSection/ProjectSection";
 
 const HomePage = (props) => {
   return (
-    <div className="HomePage">
+    <motion.div
+      className="Page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <IntroSection />
       <ProjectSection />
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,18 +1,17 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import ProjectPage from "./ProjectPage";
+
 import Button from "../components/Button/Button";
 
-import "./ProjectPage.scss";
-
-const ProjectPage = (props) => {
-  const { slug } = props.match.params;
-
+const ProjectMuser = (props) => {
   return (
-    <div className="ProjectPage">
-      <h1>Muser</h1>
-      <Button>View Live</Button>
-    </div>
+    <ProjectPage>
+      <div className="section">
+        <h1>Muser</h1>
+        <Button>View Live</Button>
+      </div>
+    </ProjectPage>
   );
 };
 
-export default withRouter(ProjectPage);
+export default ProjectMuser;

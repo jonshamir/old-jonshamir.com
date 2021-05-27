@@ -7,4 +7,9 @@
   transform: scale(0.5);
   transition: transform $transition-defaults;
   z-index: 150;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-top: -10px;
+    margin-left: -20px;
+  }
 }

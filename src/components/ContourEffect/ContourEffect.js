@@ -93,9 +93,8 @@ class ContourEffect extends React.Component {
     const { shouldDisplay } = this.props;
     return (
       <div
-        className="ContourEffect"
+        className={shouldDisplay ? "ContourEffect" : "ContourEffect hidden"}
         ref={this.canvasRef}
-        style={{ display: shouldDisplay ? "block" : "none" }}
       ></div>
     );
   }

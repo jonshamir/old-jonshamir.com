@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 import JonLogo from "../JonLogo/JonLogo";
 
 import "./FloatingLogo.scss";
@@ -6,7 +8,12 @@ import "./FloatingLogo.scss";
 class FloatingLogo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoaded: false, isMinimized: false, inlinePos: [0, 0] };
+    this.state = {
+      isLoaded: false,
+      isMinimized: false,
+      inlinePos: [0, 0],
+      inlineOnScroll: props.history.location.pathname === "/",
+    };
     this.inlineLogoEl = null;
   }
 
@@ -17,6 +24,19 @@ class FloatingLogo extends React.Component {
     setTimeout(() => {
       this.setState({ isLoaded: true });
     }, 500);
+
+    this.props.history.listen((location, action) => {
+      this.setState({
+        inlineOnScroll: false,
+      });
+      if (location.pathname === "/") {
+        setTimeout(() => {
+          this.setState({
+            inlineOnScroll: true,
+          });
+        }, 300);
+      }
+    });
   }
 
   updateInlinePos = () => {
@@ -58,8 +78,7 @@ class FloatingLogo extends React.Component {
   };
 
   render() {
-    const { isMinimized } = this.state;
-    const { inlineOnScroll } = this.props;
+    const { isMinimized, inlineOnScroll } = this.state;
     const { x, y } = this.getInlinePos();
     const logoTransform =
       !inlineOnScroll || (this.inlineLogoEl && isMinimized)
@@ -74,4 +93,4 @@ class FloatingLogo extends React.Component {
   }
 }
 
-export default FloatingLogo;
+export default withRouter(FloatingLogo);
