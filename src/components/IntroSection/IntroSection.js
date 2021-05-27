@@ -20,7 +20,7 @@ class IntroSection extends React.Component {
     // const { x, y } = this.inlineLogoRef.current.getBoundingClientRect();
     const x = this.inlineLogoRef.current.offsetLeft;
     const y = this.inlineLogoRef.current.offsetTop;
-    this.setState({ logoPosition: [x - 20, y - 150] });
+    this.setState({ logoPosition: [x - 30, y - 180] });
   };
 
   handleScroll = () => {

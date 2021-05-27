@@ -16,7 +16,7 @@ const projectData = [
   {
     slug: "unitycg",
     name: "UnityCG",
-    subtitle: "Computer graphics course in Unity",
+    subtitle: "Computer graphics course",
   },
   {
     slug: "herbtree",

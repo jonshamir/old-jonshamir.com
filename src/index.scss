@@ -23,9 +23,15 @@ body {
   overflow-x: hidden;
   background-color: $bg-color;
   color: $text-color;
+}
+
+body,
+button,
+input {
   font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1em;
 }
 
 p {
@@ -36,14 +42,13 @@ p {
 .section {
   position: relative;
   z-index: 100;
-  min-height: 80vh;
   padding: 2em 10em;
   box-sizing: border-box;
   max-width: 1600px;
   margin: auto;
 
   @media screen and (max-width: $tablet-width) {
-    padding: 2em 6em;
+    padding: 2em 8em;
   }
   @media screen and (max-width: $mobile-width) {
     padding: 1em 2em;

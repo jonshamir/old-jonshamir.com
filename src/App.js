@@ -4,6 +4,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import ProjectMuser from "./pages/ProjectMuser";
 
 const App = () => {
   const location = useLocation();
@@ -14,8 +15,8 @@ const App = () => {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/project/:slug">
-          <ProjectPage />
+        <Route path="/project/muser">
+          <ProjectMuser />
         </Route>
       </Switch>
     </AnimatePresence>
