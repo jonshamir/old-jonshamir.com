@@ -77,7 +77,7 @@ void main() {
   float DF = 0.0;
 
   float a = 0.0;
-  DF += snoise(pos + vel + vec2(0, u_scroll)) * 0.25 + 0.25;
+  DF += snoise(pos + vel + vec2(0, -u_scroll)) * 0.25 + 0.25;
 
   // Add a random position
   a = snoise(pos*vec2(cos(t), sin(t))*0.1) * 3.1415;

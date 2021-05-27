@@ -1,0 +1,41 @@
+@use "src/utils" as *;
+
+.SocialLinks {
+  position: fixed;
+  z-index: 150;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 3em;
+
+  list-style-type: none;
+  li {
+    cursor: pointer;
+    padding: 0.2em;
+
+    img {
+      width: 1.2em;
+      height: 1.2em;
+      margin: 0.5em;
+      vertical-align: middle;
+      opacity: 0.6;
+      transition: opacity $transition-defaults;
+    }
+    span {
+      display: inline-block;
+      transition: all $transition-defaults;
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    &:hover {
+      img {
+        opacity: 0.8;
+      }
+      span {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

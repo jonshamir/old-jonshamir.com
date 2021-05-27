@@ -3,4 +3,8 @@
   top: 0;
   left: 0;
   z-index: 1;
+  canvas {
+    box-sizing: border-box;
+    border: 20px solid #333;
+  }
 }

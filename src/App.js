@@ -1,12 +1,15 @@
 import ContourEffect from "./components/ContourEffect/ContourEffect";
-import MainPage from "./components/MainPage/MainPage";
-import "./App.scss";
+import IntroSection from "./components/IntroSection/IntroSection";
+import ProjectSection from "./components/ProjectSection/ProjectSection";
+import SocialLinks from "./components/SocialLinks/SocialLinks";
 
 function App() {
   return (
     <div className="App">
       <ContourEffect />
-      <MainPage />
+      <SocialLinks />
+      <IntroSection />
+      <ProjectSection />
     </div>
   );
 }
