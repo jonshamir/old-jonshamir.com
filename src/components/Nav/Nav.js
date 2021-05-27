@@ -6,7 +6,7 @@ const Nav = (props) => {
   return (
     <ul className="Nav">
       <li>About</li>
-      <li>Project</li>
+      <li>Projects</li>
       <li>Contact</li>
     </ul>
   );

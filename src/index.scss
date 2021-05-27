@@ -26,7 +26,6 @@ body {
   font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border: 20px solid red;
 }
 
 p {
@@ -40,4 +39,13 @@ p {
   min-height: 80vh;
   padding: 2em 10em;
   box-sizing: border-box;
+  max-width: 1600px;
+  margin: auto;
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 2em 6em;
+  }
+  @media screen and (max-width: $mobile-width) {
+    padding: 1em 2em;
+  }
 }

@@ -1,14 +1,27 @@
+@use "src/utils" as *;
+
 .ProjectSection {
 }
 
 .ProjectTile {
   width: 30%;
+  margin-right: 3.3%;
   display: inline-block;
-  margin: 1em;
   cursor: pointer;
+  vertical-align: bottom;
 
+  @media screen and (max-width: $tablet-width) {
+    width: 46% !important;
+    margin-right: 3.5% !important;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
   h3 {
     font-size: 1em;
+    height: 3.5em;
     span {
       font-weight: normal;
       opacity: 0.8;

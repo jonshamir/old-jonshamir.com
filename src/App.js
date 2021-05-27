@@ -1,19 +1,25 @@
-import ContourEffect from "./components/ContourEffect/ContourEffect";
-import IntroSection from "./components/IntroSection/IntroSection";
-import ProjectSection from "./components/ProjectSection/ProjectSection";
-import SocialLinks from "./components/SocialLinks/SocialLinks";
-import Nav from "./components/Nav/Nav";
+import React from "react";
+import { AnimatePresence } from "framer-motion";
+import { Route, Switch, useLocation } from "react-router-dom";
 
-function App() {
+import HomePage from "./pages/HomePage";
+import ProjectPage from "./pages/ProjectPage";
+
+const App = () => {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <ContourEffect />
-      <Nav />
-      <SocialLinks />
-      <IntroSection />
-      <ProjectSection />
-    </div>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/project/:slug">
+          <ProjectPage />
+        </Route>
+      </Switch>
+    </AnimatePresence>
   );
-}
+};
 
 export default App;

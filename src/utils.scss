@@ -2,8 +2,5 @@ $text-color: #e0e0e0;
 $bg-color: #1f1f1f;
 $transition-defaults: 300ms ease;
 
-@mixin bg-noise {
-  background-color: $bg-color;
-  background-image: url("/bg.png");
-  background-size: 256px 256px;
-}
+$tablet-width: 1100px;
+$mobile-width: 600px;
