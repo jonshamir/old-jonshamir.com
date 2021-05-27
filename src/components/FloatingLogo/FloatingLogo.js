@@ -86,14 +86,13 @@ class FloatingLogo extends React.Component {
 
     const styles = {
       transform: logoTransform,
-      // pointerEvents: isHomepage ? "none" : "auto",
+      pointerEvents: isHomepage ? "none" : "auto",
     };
 
     return (
-      <div className="FloatingLogo" style={styles}>
-        {!isHomepage && <Link to="/" className="HomePageLink" />}
+      <Link to="/" className="FloatingLogo" style={styles}>
         <JonLogo isVisible={this.state.isLoaded} />
-      </div>
+      </Link>
     );
   }
 }

@@ -2,7 +2,31 @@
 
 .ProjectPage {
   min-height: 100vh;
+  padding: 1em 4em 6em 4em;
 
-  h1 {
+  @media screen and (max-width: $tablet-width) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  @media screen and (max-width: $mobile-width) {
+    padding: 8em 1em 6em 1em;
+  }
+
+  .subtitle {
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      line-height: 1.8em;
+      &::before {
+        content: ">";
+        display: inline-block;
+        margin: 0 0.5em;
+      }
+    }
   }
 }

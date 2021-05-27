@@ -3,11 +3,12 @@
 .Button {
   background-color: #888;
   border: 0;
-  padding: 0.5em 1em 0.4em 1em;
+  padding: 0.7em 1em 0.6em 1em;
   cursor: pointer;
   transition: background-color $transition-defaults,
     transform $transition-defaults;
   transform: translateX(0);
+  font-weight: bold;
 
   &:hover {
     background-color: #ddd;

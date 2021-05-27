@@ -8,7 +8,7 @@ const ProjectMuser = (props) => {
     <ProjectPage>
       <div className="section">
         <h1>Muser</h1>
-        <h2>Smart music visualizer</h2>
+        <p className="subtitle">Smart music visualizer</p>
         <p>
           Muser is an experiment to see how machine learning technology can be
           used to enhance music visualization.
@@ -20,9 +20,21 @@ const ProjectMuser = (props) => {
           most-fitting genres. The circles & lines move in reaction to the audio
           data, like a classic music visualizer.
         </p>
-        <Button>
-          <span>Launch Project ></span>
-        </Button>
+        <h2>Tools Used</h2>
+        <ul>
+          <li>React</li>
+          <li>WebGL (THREE.js + GLSL)</li>
+          <li>Python</li>
+        </ul>
+        <a
+          href="https://jonshamir.github.io/muser"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button>
+            <span>Launch Project ></span>
+          </Button>
+        </a>
       </div>
     </ProjectPage>
   );
