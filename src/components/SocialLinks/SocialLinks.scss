@@ -8,8 +8,9 @@
   box-sizing: border-box;
   padding: 3em;
 
-  list-style-type: none;
-  li {
+  a {
+    display: block;
+    color: $text-color !important;
     cursor: pointer;
     padding: 0.2em;
 
@@ -22,6 +23,8 @@
       transition: opacity $transition-defaults;
     }
     span {
+      color: $text-color !important;
+
       display: inline-block;
       transition: all $transition-defaults;
       opacity: 0;

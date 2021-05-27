@@ -45,7 +45,7 @@ vec3 contours(float x, float levels) {
 
   // Invert colors & reduce contrast
   y = 1.0 - y;
-  y = 0.06 * y + 0.12;
+  y = 0.05 * y + 0.12;
   return vec3(y);
 }
 

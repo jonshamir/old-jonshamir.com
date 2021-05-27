@@ -1,9 +1,15 @@
+@use "src/utils" as *;
+
 .IntroSection {
+  z-index: 101;
+
   .JonLogo {
     position: fixed;
     top: 0;
     left: 0;
     transform: scale(0.5);
+    transition: transform $transition-defaults;
+    z-index: 150;
 
     &.inline {
       transform: scale(1);

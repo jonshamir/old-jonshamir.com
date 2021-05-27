@@ -4,27 +4,50 @@ import JonLogo from "../JonLogo/JonLogo";
 import "./IntroSection.scss";
 
 class IntroSection extends React.Component {
-  componentDidMount() {
-    window.addEventListener("resize", this.handleResize);
-    window.addEventListener("scroll", this.handleScroll);
+  constructor(props) {
+    super(props);
+    this.state = { logoMinimized: false, logoPosition: [0, 0] };
+    this.inlineLogoRef = React.createRef();
   }
 
-  handleResize(e) {}
+  componentDidMount() {
+    window.addEventListener("resize", () => this.updateLogoPosition());
+    window.addEventListener("scroll", this.handleScroll);
+    this.updateLogoPosition();
+  }
+
+  updateLogoPosition = () => {
+    // const { x, y } = this.inlineLogoRef.current.getBoundingClientRect();
+    const x = this.inlineLogoRef.current.offsetLeft;
+    const y = this.inlineLogoRef.current.offsetTop;
+    this.setState({ logoPosition: [x - 20, y - 150] });
+  };
 
   handleScroll = () => {
     const currScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
+    const { logoMinimized } = this.state;
 
-    if (currScroll > 100) {
-      console.log("hey");
+    if (currScroll < 10) {
+      this.setState({ logoMinimized: false });
+    } else if (!logoMinimized) {
+      this.setState({ logoMinimized: true });
     }
   };
 
   render() {
+    const { logoMinimized, logoPosition } = this.state;
+    const logoTransform = logoMinimized
+      ? `scale(0.5)`
+      : `scale(1) translate(${logoPosition[0]}px,${logoPosition[1]}px)`;
+
     return (
       <div className="IntroSection section">
         <div className="intro">
-          <JonLogo />
+          <div className="JonLogo" style={{ transform: logoTransform }}>
+            <JonLogo />
+          </div>
+          <span ref={this.inlineLogoRef}></span>
           <h1>Hi! I'm Jon Shamir</h1>
           <p>
             I am interested in the intersection of art, science and design. I
