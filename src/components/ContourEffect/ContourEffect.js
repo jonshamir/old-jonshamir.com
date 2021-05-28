@@ -68,10 +68,12 @@ class ContourEffect extends React.Component {
       uniforms.u_mouse.value.y = e.pageY;
     };
 
-    var animate = function () {
+    const animate = () => {
       requestAnimationFrame(animate);
-      uniforms.u_time.value += 0.03;
-      renderer.render(scene, camera);
+      if (this.props.shouldDisplay) {
+        uniforms.u_time.value += 0.03;
+        renderer.render(scene, camera);
+      }
     };
     animate();
   }

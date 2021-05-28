@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollToTopOnMount from "../components/ScrollToTopOnMount/ScrollToTopOnMount";
 
 import "./ProjectPage.scss";
 
@@ -11,6 +12,7 @@ const ProjectPage = (props) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      <ScrollToTopOnMount />
       {props.children}
     </motion.div>
   );
