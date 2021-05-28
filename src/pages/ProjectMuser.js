@@ -35,6 +35,19 @@ const ProjectMuser = (props) => {
             <span>Launch Project ></span>
           </Button>
         </a>
+        <p>
+          The idea for muser and the visualization itself is inspired by Wassily
+          Kandinsky (1866-1944). Generally credited as the pioneer of abstract
+          art, his work is well-known for its musical inspirations. Kandinsky
+          associated specific tones and instruments to shapes and colors, thus
+          “visualizing” a musical composition.
+        </p>
+        <p>Circles in a Circle by Wassily Kandinsky, 1923</p>
+        <p>
+          Colors for each genre were chosen according to the Musicmap project so
+          that music genres which are stylistically closer will get similar
+          colors.
+        </p>
       </div>
     </ProjectPage>
   );
