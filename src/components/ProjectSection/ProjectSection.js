@@ -17,7 +17,7 @@ const projectData = [
   },
   {
     slug: "unitycg",
-    name: "UnityCG",
+    name: "Unity CG",
     subtitle: "Teaching Computer Graphics",
   },
   {

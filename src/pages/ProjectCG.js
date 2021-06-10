@@ -18,13 +18,12 @@ const ProjectCG = (props) => {
   return (
     <ProjectPage>
       <div className="section">
-        <div className="cubeEarth">
+        <div className="earth3d">
           <ReactPlayer
             url="images/projects/unitycg/cube.mp4"
             playing
             loop
-            width="400px"
-            height="400px"
+            width="100%"
           />
         </div>
         <h1>Unity CG</h1>
@@ -63,22 +62,26 @@ const ProjectCG = (props) => {
         >
           {slides}
         </Carousel>
-        <span className="Caption">Some slides created for the course</span>
+        <span className="Caption">
+          Some of the slides I created for the course
+        </span>
         <br />
         <br />
         <p>
-          I also created 5 practical exercises, taught the students online and
-          graded their assignments.
+          I created 5 coding exercises for the students, involing subjects such
+          as Subdivision Surfaces, Ray-Tracing, Shading, Texturing and more. I
+          taught the students remotely and graded their assignments.
         </p>
 
-        <ReactPlayer
-          url="images/projects/unitycg/torus.mp4"
-          playing
-          loop
-          width="400px"
-          height="400px"
-          style={{ float: "left" }}
-        />
+        <div className="earth3d torus">
+          <ReactPlayer
+            url="images/projects/unitycg/torus.mp4"
+            playing
+            loop
+            width="400px"
+            height="400px"
+          />
+        </div>
         <br />
         <br />
         <br />

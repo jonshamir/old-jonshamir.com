@@ -25,9 +25,12 @@
 
   figure {
     width: 80%;
-    margin: auto;
+    max-width: 36em;
+    margin: 2em;
+    margin-left: 2em;
 
     @media screen and (max-width: $mobile-width) {
+      margin: 0;
       width: 100%;
     }
   }
@@ -38,6 +41,8 @@
     display: inline-block;
     opacity: 0.5;
     margin-left: 1em;
+    margin-top: 1em;
+
     span {
       font-style: italic;
     }
@@ -49,6 +54,9 @@
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     max-width: 1600px;
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
   }
 
   .Button {
@@ -56,6 +64,7 @@
     top: 4em;
     right: 8em;
     background-color: #ffffff;
+    z-index: 101;
 
     @media screen and (max-width: $tablet-width) {
       top: 2em;
@@ -87,15 +96,13 @@
 .carousel {
   display: flex;
   align-items: center;
+  max-width: 1000px;
 
   &:hover .CarouselArrow {
     opacity: 0.5;
   }
 }
 
-.carousel-root {
-  margin: 1em auto;
-}
 .CarouselArrow {
   display: block;
   width: 1.5em;
@@ -115,12 +122,15 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 500px;
   opacity: 0;
-  transition: opacity $transition-defaults;
+  transition: opacity $transition-defaults,
+    background-color $transition-defaults;
 
   &:hover {
     opacity: 1 !important;
   }
-
+  &:active {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
   &.left {
     left: 0;
   }
@@ -129,10 +139,22 @@
   }
 }
 
-.cubeEarth {
+.earth3d {
   float: right;
+  width: 400px;
+  height: 400px;
 
   @media screen and (max-width: $tablet-width) {
     float: none;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  &.torus {
+    float: left;
+
+    @media screen and (max-width: $tablet-width) {
+      float: none;
+    }
   }
 }

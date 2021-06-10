@@ -41,14 +41,12 @@ const ProjectMuser = (props) => {
             <span>Launch Project ></span>
           </Button>
         </a>
-        <p>
-          <figure>
-            <Image src="images/projects/kandinsky.jpg" alt="kandinsky" />
-            <span className="Caption">
-              <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
-            </span>
-          </figure>
-        </p>
+        <figure>
+          <Image src="images/projects/kandinsky.jpg" alt="kandinsky" />
+          <span className="Caption">
+            <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
+          </span>
+        </figure>
         <p>
           The idea for muser and the visualization itself is inspired by Wassily
           Kandinsky (1866-1944). Generally credited as the pioneer of abstract

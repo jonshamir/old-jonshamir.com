@@ -21,11 +21,7 @@ const Image = ({ alt, aspectRatio = "1:1", onLoad = () => null, ...rest }) => {
   }, [containerRef, aspectRatio]);
 
   return (
-    <div
-      className="image-wrapper"
-      ref={containerRef}
-      style={{ minHeight: containerHeight }}
-    >
+    <div className="image-wrapper" ref={containerRef} style={{}}>
       {containerHeight && (
         <>
           {!hasImageLoaded && <div className="image-loading" />}
