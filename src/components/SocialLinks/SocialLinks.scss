@@ -17,6 +17,7 @@
     display: block;
     padding: 0.2em;
     text-align: right;
+    position: relative;
 
     img {
       width: 1.2em;
@@ -32,7 +33,12 @@
       display: inline-block;
       transition: all $transition-defaults;
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translate(-30px, -50%);
+      position: absolute;
+      top: 50%;
+      right: 3em;
+      text-align: right;
+      pointer-events: none;
     }
 
     &:hover {
@@ -41,7 +47,7 @@
       }
       span {
         opacity: 1;
-        transform: translateX(0);
+        transform: translate(0, -50%);
       }
     }
   }
