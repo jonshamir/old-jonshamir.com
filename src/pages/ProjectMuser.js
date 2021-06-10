@@ -7,7 +7,7 @@ const ProjectMuser = (props) => {
   return (
     <ProjectPage>
       <img
-        src="/images/projects/muser-screenshot.png"
+        src="images/projects/muser-screenshot.png"
         alt="Muser Screenshot"
         className="Screenshot"
       />
@@ -42,7 +42,7 @@ const ProjectMuser = (props) => {
         </a>
         <p>
           <figure>
-            <img src="/images/projects/kandinsky.jpg" alt="kandinsky" />
+            <img src="images/projects/kandinsky.jpg" alt="kandinsky" />
             <span className="Caption">
               <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
             </span>

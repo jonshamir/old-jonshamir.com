@@ -4,15 +4,13 @@ import ProjectPage from "./ProjectPage";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import Button from "../components/Button/Button";
-
 const range = (n) => Array.from({ length: n }, (_, index) => index + 1);
 
 const ProjectCG = (props) => {
   const slides = range(9).map((i) => {
     return (
       <div key={i}>
-        <img src={`/images/projects/unitycg/slide${i}.png`} />
+        <img src={`images/projects/unitycg/slide${i}.png`} alt="Slide ${i}" />
       </div>
     );
   });
@@ -22,7 +20,7 @@ const ProjectCG = (props) => {
       <div className="section">
         <div className="cubeEarth">
           <ReactPlayer
-            url="/images/projects/unitycg/cube.mp4"
+            url="images/projects/unitycg/cube.mp4"
             playing
             loop
             width="400px"
@@ -74,7 +72,7 @@ const ProjectCG = (props) => {
         </p>
 
         <ReactPlayer
-          url="/images/projects/unitycg/torus.mp4"
+          url="images/projects/unitycg/torus.mp4"
           playing
           loop
           width="400px"
