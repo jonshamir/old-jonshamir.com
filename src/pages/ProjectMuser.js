@@ -2,6 +2,7 @@ import React from "react";
 import ProjectPage from "./ProjectPage";
 
 import Button from "../components/Button/Button";
+import Image from "../components/Image/Image";
 
 const ProjectMuser = (props) => {
   return (
@@ -42,7 +43,7 @@ const ProjectMuser = (props) => {
         </a>
         <p>
           <figure>
-            <img src="images/projects/kandinsky.jpg" alt="kandinsky" />
+            <Image src="images/projects/kandinsky.jpg" alt="kandinsky" />
             <span className="Caption">
               <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
             </span>

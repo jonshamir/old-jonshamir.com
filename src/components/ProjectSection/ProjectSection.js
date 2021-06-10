@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Image from "../Image/Image";
 
 import "./ProjectSection.scss";
 
@@ -37,7 +38,10 @@ const ProjectSection = (props) => {
             className="ProjectTile"
             key={project.slug}
           >
-            <img src={`images/projects/${project.slug}.jpg`} alt="" />
+            <Image
+              src={`images/projects/${project.slug}.jpg`}
+              alt={project.name}
+            />
             <h3>
               {project.name}
               <span> / {project.subtitle}</span>
