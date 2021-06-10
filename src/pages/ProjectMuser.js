@@ -6,6 +6,11 @@ import Button from "../components/Button/Button";
 const ProjectMuser = (props) => {
   return (
     <ProjectPage>
+      <img
+        src="/images/projects/muser-screenshot.png"
+        alt="Muser Screenshot"
+        className="Screenshot"
+      />
       <div className="section">
         <h1>Muser</h1>
         <p className="subtitle">Smart music visualizer</p>
@@ -21,7 +26,7 @@ const ProjectMuser = (props) => {
           data, like a classic music visualizer.
         </p>
         <h2>Tools Used</h2>
-        <ul>
+        <ul className="List">
           <li>React</li>
           <li>WebGL (THREE.js + GLSL)</li>
           <li>Python</li>
@@ -36,13 +41,20 @@ const ProjectMuser = (props) => {
           </Button>
         </a>
         <p>
+          <figure>
+            <img src="/images/projects/kandinsky.jpg" alt="kandinsky" />
+            <span className="Caption">
+              <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
+            </span>
+          </figure>
+        </p>
+        <p>
           The idea for muser and the visualization itself is inspired by Wassily
           Kandinsky (1866-1944). Generally credited as the pioneer of abstract
           art, his work is well-known for its musical inspirations. Kandinsky
           associated specific tones and instruments to shapes and colors, thus
           “visualizing” a musical composition.
         </p>
-        <p>Circles in a Circle by Wassily Kandinsky, 1923</p>
         <p>
           Colors for each genre were chosen according to the Musicmap project so
           that music genres which are stylistically closer will get similar

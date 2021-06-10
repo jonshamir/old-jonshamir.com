@@ -43,6 +43,10 @@ a {
   color: $text-color !important;
 }
 
+h2 {
+  font-size: 1.3em;
+}
+
 .Page {
   z-index: 101;
   position: relative;
@@ -55,6 +59,7 @@ a {
   box-sizing: border-box;
   max-width: 1600px;
   margin: auto;
+  text-align: left;
 
   @media screen and (max-width: $tablet-width) {
     padding: 2em 8em;
@@ -62,4 +67,9 @@ a {
   @media screen and (max-width: $mobile-width) {
     padding: 1em 2em;
   }
+}
+
+::selection {
+  background: $text-color;
+  color: $bg-color;
 }

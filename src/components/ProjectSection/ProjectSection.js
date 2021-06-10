@@ -11,13 +11,13 @@ const projectData = [
   },
   {
     slug: "animations",
-    name: "Animations",
-    subtitle: "2D & 3D",
+    name: "Motion",
+    subtitle: "2D & 3D animations",
   },
   {
     slug: "unitycg",
     name: "UnityCG",
-    subtitle: "Computer graphics course",
+    subtitle: "Teaching Computer Graphics",
   },
   {
     slug: "herbtree",

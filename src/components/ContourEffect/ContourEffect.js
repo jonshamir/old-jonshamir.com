@@ -79,10 +79,11 @@ class ContourEffect extends React.Component {
   }
 
   handleResize(e) {
-    const BORDER = 15 * 2;
+    const BORDER = 15 * 2 * 0;
     const w = window.innerWidth - BORDER;
     const h = window.innerHeight - BORDER;
     renderer.setSize(w, h);
+    // renderer.setPixelRatio(0.5);
     uniforms.u_resolution.value.x = w;
     uniforms.u_resolution.value.y = h;
   }

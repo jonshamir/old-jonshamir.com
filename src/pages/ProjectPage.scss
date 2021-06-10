@@ -3,6 +3,7 @@
 .ProjectPage {
   min-height: 100vh;
   padding: 1em 4em 6em 4em;
+  text-align: center;
 
   @media screen and (max-width: $tablet-width) {
     padding-left: 2em;
@@ -12,6 +13,56 @@
     padding: 8em 0em 4em 0em;
   }
 
+  p,
+  ul,
+  h1,
+  h2,
+  h3,
+  h4 {
+    position: relative;
+    z-index: 100;
+  }
+
+  figure {
+    width: 80%;
+    margin: auto;
+
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  .Caption {
+    display: inline-block;
+    opacity: 0.5;
+    margin-left: 1em;
+    span {
+      font-style: italic;
+    }
+  }
+  .Screenshot {
+    width: 85%;
+    margin: auto;
+    margin-top: -200px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    max-width: 1600px;
+  }
+
+  .Button {
+    position: absolute;
+    top: 4em;
+    right: 8em;
+    background-color: #ffffff;
+
+    @media screen and (max-width: $tablet-width) {
+      top: 2em;
+      right: 6em;
+    }
+  }
+
   .subtitle {
     font-weight: bold;
     color: #ffffff;
@@ -19,7 +70,7 @@
   h1 {
     font-weight: normal;
   }
-  ul {
+  ul.List {
     list-style-type: none;
     padding: 0;
     li {
@@ -30,5 +81,58 @@
         margin: 0 0.5em;
       }
     }
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+
+  &:hover .CarouselArrow {
+    opacity: 0.5;
+  }
+}
+
+.carousel-root {
+  margin: 1em auto;
+}
+.CarouselArrow {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $bg-color;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  z-index: 150;
+  transform: translateY(-100%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 500px;
+  opacity: 0;
+  transition: opacity $transition-defaults;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+
+.cubeEarth {
+  float: right;
+
+  @media screen and (max-width: $tablet-width) {
+    float: none;
   }
 }

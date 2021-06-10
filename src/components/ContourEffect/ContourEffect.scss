@@ -6,11 +6,12 @@
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  border: 15px solid #333;
+  // border: 15px solid #333;
 
   canvas {
     will-change: opacity;
     transition: opacity 500ms ease;
+    width: 100%;
   }
   &.hidden > canvas {
     opacity: 0;
