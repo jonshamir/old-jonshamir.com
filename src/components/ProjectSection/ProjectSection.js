@@ -18,11 +18,11 @@ const projectData = [
   {
     slug: "unitycg",
     name: "Unity CG",
-    subtitle: "Teaching Computer Graphics",
+    subtitle: "Computer graphics course in Unity3D",
   },
   {
     slug: "herbtree",
-    name: "HerbTree",
+    name: "Herb Tree",
     subtitle: "Interactive botanic visualization",
   },
 ];
@@ -39,13 +39,13 @@ const ProjectSection = (props) => {
             key={project.slug}
           >
             <Image
-              src={`images/projects/${project.slug}.jpg`}
+              src={`assets/projects/${project.slug}/cover.jpg`}
               alt={project.name}
             />
-            <h3>
-              {project.name}
-              <span> / {project.subtitle}</span>
-            </h3>
+            <div className="info">
+              <h3>{project.name}</h3>
+              <h4>{project.subtitle}</h4>
+            </div>
           </Link>
         ))}
       </div>

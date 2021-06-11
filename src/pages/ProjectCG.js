@@ -10,7 +10,7 @@ const ProjectCG = (props) => {
   const slides = range(9).map((i) => {
     return (
       <div key={i}>
-        <img src={`images/projects/unitycg/slide${i}.png`} alt="Slide ${i}" />
+        <img src={`assets/projects/unitycg/slide${i}.png`} alt="Slide ${i}" />
       </div>
     );
   });
@@ -20,62 +20,85 @@ const ProjectCG = (props) => {
       <div className="section">
         <div className="earth3d">
           <ReactPlayer
-            url="images/projects/unitycg/cube.mp4"
+            url="assets/projects/unitycg/cube.mp4"
+            config={{
+              file: {
+                attributes: {
+                  poster: "assets/projects/unitycg/cube.png",
+                  disableRemotePlayback: true,
+                },
+              },
+            }}
             playing
             loop
             width="100%"
+            attributes={{ disableRemotePlayback: true }}
           />
         </div>
         <h1>Unity CG</h1>
         <p className="subtitle">Teaching Computer Graphics in Unity3D</p>
         <p>
           In 2019 I was given the opportunity to rebuild the practical side of
-          the Computer Graphics Course at HUJI from the ground up. The idea was
-          to teach Computer Graphics in a more engaging way, using the real-time
-          interactivity of Unity3D.
+          the Computer Graphics Course at{" "}
+          <a href="https://en.huji.ac.il/" target="_blank">
+            the Hebrew University
+          </a>{" "}
+          from the ground up. The idea was to teach Computer Graphics in a more
+          engaging way, using the real-time interactivity of the{" "}
+          <a href="https://unity.com/" target="_blank">
+            Unity game engine
+          </a>
+          .
         </p>
         <p>
-          Due to the COVID-19 pandemic which was just beginning, we understood
-          that the campus will probably be closed. To improve the remote
-          learning experience, I designed over 500 slides with custom
-          illustrations & animations that visualize different concepts.
+          Due to the emerging COVID-19 pandemic, the class had to be taught
+          remotely. In an attempt to improve the learning experience for the
+          students, I designed over 500 slides with custom illustrations &
+          animations that visualize different concepts.
         </p>
-        <br />
-
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          showIndicators={false}
-          emulateTouch
-          infiniteLoop
-          autoPlay
-          renderArrowPrev={(clickHandler) => (
-            <div onClick={clickHandler} className="CarouselArrow left">
-              {"<"}
-            </div>
-          )}
-          renderArrowNext={(clickHandler) => (
-            <div onClick={clickHandler} className="CarouselArrow right">
-              {">"}
-            </div>
-          )}
-        >
-          {slides}
-        </Carousel>
-        <span className="Caption">
-          Some of the slides I created for the course
-        </span>
-        <br />
+        <div className="slideContainer">
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            showIndicators={false}
+            emulateTouch
+            infiniteLoop
+            autoPlay
+            renderArrowPrev={(clickHandler) => (
+              <div onClick={clickHandler} className="CarouselArrow left">
+                {"<"}
+              </div>
+            )}
+            renderArrowNext={(clickHandler) => (
+              <div onClick={clickHandler} className="CarouselArrow right">
+                {">"}
+              </div>
+            )}
+          >
+            {slides}
+          </Carousel>
+          <span className="Caption">
+            Some of the slides I created for the course
+          </span>
+        </div>
         <br />
         <p>
-          I created 5 coding exercises for the students, involing subjects such
-          as Subdivision Surfaces, Ray-Tracing, Shading, Texturing and more. I
+          I also created 5 coding exercises involving subjects such as
+          Subdivision Surfaces, Ray-Tracing, Shading, Texturing and more. I
           taught the students remotely and graded their assignments.
         </p>
 
         <div className="earth3d torus">
           <ReactPlayer
-            url="images/projects/unitycg/torus.mp4"
+            url="assets/projects/unitycg/torus.mp4"
+            config={{
+              file: {
+                attributes: {
+                  poster: "assets/projects/unitycg/torus.png",
+                  disableRemotePlayback: true,
+                },
+              },
+            }}
             playing
             loop
             width="400px"

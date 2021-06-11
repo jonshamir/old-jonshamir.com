@@ -13,6 +13,8 @@ import ProjectCG from "./pages/ProjectCG";
 
 const App = () => {
   const location = useLocation();
+  if (window.history.scrollRestoration)
+    window.history.scrollRestoration = "manual";
 
   return (
     <div>
