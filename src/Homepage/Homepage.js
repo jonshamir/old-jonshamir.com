@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import IntroSection from "../components/IntroSection/IntroSection";
-import ProjectSection from "../components/ProjectSection/ProjectSection";
+import IntroSection from "./IntroSection/IntroSection";
+import ProjectSection from "./ProjectSection/ProjectSection";
 
-const HomePage = (props) => {
+const Homepage = (props) => {
   return (
     <motion.div
       className="Page"
@@ -18,4 +18,4 @@ const HomePage = (props) => {
   );
 };
 
-export default HomePage;
+export default Homepage;

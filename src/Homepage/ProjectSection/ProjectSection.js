@@ -1,31 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Image from "../Image/Image";
+import projectData from "../../projects/projects.json";
+
+import Image from "../../components/Image/Image";
 
 import "./ProjectSection.scss";
-
-const projectData = [
-  {
-    slug: "muser",
-    name: "Muser",
-    subtitle: "Smart music visualizer",
-  },
-  {
-    slug: "animations",
-    name: "Motion",
-    subtitle: "2D & 3D animations",
-  },
-  {
-    slug: "unitycg",
-    name: "Unity CG",
-    subtitle: "Computer graphics course in Unity3D",
-  },
-  {
-    slug: "herbtree",
-    name: "Herb Tree",
-    subtitle: "Interactive botanic visualization",
-  },
-];
 
 const ProjectSection = (props) => {
   return (
@@ -34,7 +13,7 @@ const ProjectSection = (props) => {
       <div className="projectTiles">
         {projectData.map((project) => (
           <Link
-            to={`/project/${project.slug}`}
+            to={`/projects/${project.slug}`}
             className="ProjectTile"
             key={project.slug}
           >

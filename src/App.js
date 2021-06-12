@@ -6,10 +6,11 @@ import FloatingLogo from "./components/FloatingLogo/FloatingLogo";
 import ContourEffect from "./components/ContourEffect/ContourEffect";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 
-import HomePage from "./pages/HomePage";
-import ProjectMuser from "./pages/ProjectMuser";
-import ProjectAnimations from "./pages/ProjectAnimations";
-import ProjectCG from "./pages/ProjectCG";
+import Homepage from "./Homepage/Homepage";
+import Muser from "./projects/Muser";
+import Motion from "./projects/Motion";
+import UnityCG from "./projects/UnityCG";
+import Illustrations from "./projects/Illustrations";
 
 const App = () => {
   const location = useLocation();
@@ -24,16 +25,19 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
-            <HomePage />
+            <Homepage />
           </Route>
-          <Route path="/project/muser">
-            <ProjectMuser />
+          <Route path="/projects/muser">
+            <Muser />
           </Route>
-          <Route path="/project/animations">
-            <ProjectAnimations />
+          <Route path="/projects/motion">
+            <Motion />
           </Route>
-          <Route path="/project/unitycg">
-            <ProjectCG />
+          <Route path="/projects/unitycg">
+            <UnityCG />
+          </Route>
+          <Route path="/projects/illustrations">
+            <Illustrations />
           </Route>
         </Switch>
       </AnimatePresence>

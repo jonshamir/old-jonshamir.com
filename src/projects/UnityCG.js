@@ -24,7 +24,7 @@ const ProjectCG = (props) => {
             config={{
               file: {
                 attributes: {
-                  poster: "assets/projects/unitycg/cube.png",
+                  poster: "assets/projects/unitycg/cube.jpg",
                   disableRemotePlayback: true,
                 },
               },
@@ -36,7 +36,7 @@ const ProjectCG = (props) => {
           />
         </div>
         <h1>Unity CG</h1>
-        <p className="subtitle">Teaching Computer Graphics in Unity3D</p>
+        <p className="subtitle">Teaching Computer Graphics in Unity</p>
         <p>
           In 2019 I was given the opportunity to rebuild the practical side of
           the Computer Graphics Course at{" "}
@@ -94,15 +94,14 @@ const ProjectCG = (props) => {
             config={{
               file: {
                 attributes: {
-                  poster: "assets/projects/unitycg/torus.png",
+                  poster: "assets/projects/unitycg/torus.jpg",
                   disableRemotePlayback: true,
                 },
               },
             }}
             playing
             loop
-            width="400px"
-            height="400px"
+            width="100%"
           />
         </div>
         <br />

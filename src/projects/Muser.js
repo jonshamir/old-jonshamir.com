@@ -32,7 +32,7 @@ const ProjectMuser = (props) => {
           color palette is based on the 5 most-fitting genres.
         </p>
         <p>
-          This technique also allows me to visualize how the "style" of a song
+          This technique also allows us to visualize how the style of a song
           changes over time:
         </p>
         <p>
@@ -84,6 +84,11 @@ const ProjectMuser = (props) => {
           similar colors.
         </p>
       </div>
+      <img
+        src="assets/projects/muser/circles.png"
+        alt=""
+        className="muserCircles"
+      />
     </ProjectPage>
   );
 };

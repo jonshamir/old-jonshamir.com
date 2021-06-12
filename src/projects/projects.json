@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "muser",
+    "name": "Muser",
+    "subtitle": "Smart music visualizer"
+  },
+  {
+    "slug": "motion",
+    "name": "Motion",
+    "subtitle": "2D & 3D animations"
+  },
+  {
+    "slug": "unitycg",
+    "name": "Unity CG",
+    "subtitle": "Computer graphics course in Unity"
+  },
+  {
+    "slug": "illustrations",
+    "name": "Drawings & illustrations",
+    "subtitle": "Various techniques"
+  },
+  {
+    "slug": "herbtree",
+    "name": "Herb Tree",
+    "subtitle": "Interactive botanic visualization"
+  }
+]
