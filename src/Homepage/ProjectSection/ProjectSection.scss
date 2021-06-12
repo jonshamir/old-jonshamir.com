@@ -65,11 +65,14 @@
       opacity: 1;
       background-color: transparent;
       padding-top: 1em;
+      padding-left: 1em;
+      padding-bottom: 3em;
 
       h3,
       h4 {
         opacity: 1 !important;
         transform: none !important;
+        margin-bottom: 0 !important;
       }
     }
 

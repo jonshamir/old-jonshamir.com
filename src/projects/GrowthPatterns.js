@@ -6,11 +6,12 @@ import Image from "../components/Image/Image";
 const GrowthPatterns = (props) => {
   return (
     <ProjectPage>
+      <img
+        src="assets/projects/growth-patterns/pic2.jpg"
+        alt="GrowthPatterns"
+        className="Screenshot"
+      />
       <div className="section">
-        <img
-          src="assets/projects/growth-patterns/pic2.jpg"
-          alt="GrowthPatterns"
-        />
         <h1>Growth Patterns</h1>
         <p className="subtitle">Population density visualization</p>
         <p>
