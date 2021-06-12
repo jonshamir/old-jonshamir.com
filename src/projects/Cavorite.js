@@ -13,6 +13,7 @@ const Cavorite = (props) => {
           assignment for an animation course.
         </p>
         <p>Made using After Effects & Blender.</p>
+        <br />
         <VideoEmbed videoId="bulTbi_Eno0" />
         <p>
           <br />

@@ -18,6 +18,9 @@ const TelAviv = (props) => {
         <br />
         <img src="assets/projects/tel-aviv/watercolor1.jpg" alt="Tel Aviv 1" />
         <br />
+        <p>
+          <br />
+        </p>
       </div>
     </ProjectPage>
   );

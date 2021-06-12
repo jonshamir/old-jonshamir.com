@@ -17,7 +17,7 @@ const App = () => {
 
   const projectPaths = projectData.map((project) => {
     return (
-      <Route path={`/projects/${project.slug}`}>
+      <Route path={`/projects/${project.slug}`} key={project.slug}>
         <project.component />
       </Route>
     );

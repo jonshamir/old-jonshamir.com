@@ -32,7 +32,11 @@ const ProjectMuser = (props) => {
         </p>
         <p>
           A pre-trained neural network called{" "}
-          <a href="https://github.com/jordipons/musicnn" target="_blank">
+          <a
+            href="https://github.com/jordipons/musicnn"
+            target="_blank"
+            rel="noreferrer"
+          >
             musicnn
           </a>{" "}
           predicts the musical genre for each second of a song. The predictions
@@ -77,7 +81,7 @@ const ProjectMuser = (props) => {
         </p>
         <p>
           Colors for each genre were chosen according to the{" "}
-          <a href="https://musicmap.info/" target="_blank">
+          <a href="https://musicmap.info/" target="_blank" rel="noreferrer">
             Musicmap
           </a>{" "}
           project so that music genres which are stylistically closer will get

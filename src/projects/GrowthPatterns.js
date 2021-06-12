@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectPage from "./ProjectPage";
 
+import Image from "../components/Image/Image";
+
 const GrowthPatterns = (props) => {
   return (
     <ProjectPage>

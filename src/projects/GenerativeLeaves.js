@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectPage from "./ProjectPage";
 
+import Image from "../components/Image/Image";
+
 const GenerativeLeaves = (props) => {
   return (
     <ProjectPage>
@@ -15,7 +17,7 @@ const GenerativeLeaves = (props) => {
             rel="noreferrer"
           >
             Generalized Superellipses
-          </a>
+          </a>{" "}
           in JavaScript. Each leaf was screen printed in 2 colors with a
           different halftone pattern.
         </p>

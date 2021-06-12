@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Image.scss";
 
-const Image = ({ alt, aspectRatio = "1:1", onLoad = () => null, ...rest }) => {
+const Image = ({
+  alt,
+  aspectRatio = "1:1",
+  onLoad = () => null,
+  style = {},
+  className = "",
+  ...rest
+}) => {
   const [hasImageLoaded, setHasImageLoaded] = useState(false);
   const [containerHeight, setContainerHeight] = useState(null);
   const containerRef = useRef(null);
@@ -21,13 +28,17 @@ const Image = ({ alt, aspectRatio = "1:1", onLoad = () => null, ...rest }) => {
   }, [containerRef, aspectRatio]);
 
   return (
-    <div className="image-wrapper" ref={containerRef} style={{}}>
-      {containerHeight && (
-        <>
-          {!hasImageLoaded && <div className="image-loading" />}
-          <img {...rest} onLoad={onImageLoaded} className="image" alt={alt} />
-        </>
-      )}
+    <div
+      className={"image-wrapper " + className}
+      ref={containerRef}
+      style={style}
+    >
+      <img
+        {...rest}
+        onLoad={onImageLoaded}
+        className={hasImageLoaded ? "image loaded" : "image"}
+        alt={alt}
+      />
     </div>
   );
 };

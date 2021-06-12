@@ -20,6 +20,7 @@ const ProjectSection = (props) => {
             <Image
               src={`assets/projects/${project.slug}/cover.jpg`}
               alt={project.name}
+              style={{ backgroundColor: project.color }}
             />
             <div className="info">
               <h3>{project.name}</h3>

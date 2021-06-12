@@ -10,7 +10,7 @@ const ProjectCG = (props) => {
   const slides = range(9).map((i) => {
     return (
       <div key={i}>
-        <img src={`assets/projects/unitycg/slide${i}.png`} alt="Slide ${i}" />
+        <img src={`assets/projects/unitycg/slide${i}.png`} alt="Slide" />
       </div>
     );
   });
@@ -40,12 +40,12 @@ const ProjectCG = (props) => {
         <p>
           In 2019 I was given the opportunity to rebuild the practical side of
           the Computer Graphics Course at{" "}
-          <a href="https://en.huji.ac.il/" target="_blank">
+          <a href="https://en.huji.ac.il/" target="_blank" rel="noreferrer">
             the Hebrew University
           </a>{" "}
           from the ground up. The idea was to teach Computer Graphics in a more
           engaging way, using the real-time interactivity of the{" "}
-          <a href="https://unity.com/" target="_blank">
+          <a href="https://unity.com/" target="_blank" rel="noreferrer">
             Unity game engine
           </a>
           .

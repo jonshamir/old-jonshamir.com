@@ -14,6 +14,7 @@ const Scopus = (props) => {
           architecture. I decided it might be used as a spaceship...
         </p>
         <p>Modeled & rendered using Cinema4D.</p>
+        <br />
         <VideoEmbed videoId="7KkArk0uCDQ" />
         <p>
           <br />

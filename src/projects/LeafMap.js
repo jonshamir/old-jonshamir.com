@@ -25,7 +25,7 @@ const LeafMap = (props) => {
         <p className="subtitle">Interactive map of leaf shapes</p>
         <p>
           inspired by this{" "}
-          <a href="http://fontmap.ideo.com/" target="_blank">
+          <a href="http://fontmap.ideo.com/" target="_blank" rel="noreferrer">
             Font Map
           </a>
           , I used machine-learning techniques to organize tree species in 2D
