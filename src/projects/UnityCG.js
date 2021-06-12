@@ -53,8 +53,8 @@ const ProjectCG = (props) => {
         <p>
           Due to the emerging COVID-19 pandemic, the class had to be taught
           remotely. In an attempt to improve the learning experience for the
-          students, I designed over 500 slides with custom illustrations &
-          animations that visualize different concepts.
+          students, I created 12 lectures with over 500 slides including custom
+          illustrations & animations that visualize different concepts.
         </p>
         <div className="slideContainer">
           <Carousel

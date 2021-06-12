@@ -22,10 +22,7 @@ const HerbTree = (props) => {
           specimens from the hebrew University herbarium, which are incorporated
           in the project.
         </p>
-        <p>
-          The site is currently available only in Hebrew but will be translated
-          soon.
-        </p>
+        <p>The site is currently available only in Hebrew.</p>
         <br />
         <h2>Tools Used</h2>
         <ul className="List">

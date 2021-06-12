@@ -9,7 +9,7 @@ import "./ProjectSection.scss";
 const ProjectSection = (props) => {
   return (
     <div className="ProjectSection section">
-      <h2>Projects</h2>
+      <h2>Recent Projects</h2>
       <div className="projectTiles">
         {projectData.map((project) => (
           <Link
