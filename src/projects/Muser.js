@@ -13,14 +13,22 @@ const ProjectMuser = (props) => {
         className="Screenshot"
       />
       <div className="section">
+        <a
+          href="https://jonshamir.github.io/muser"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button>
+            <span>Launch Project ></span>
+          </Button>
+        </a>
         <h1>Muser</h1>
         <p className="subtitle">Smart music visualizer</p>
         <p>
           Muser is an experiment to see how machine learning technology can be
-          used to enhance music visualization. The idea for Muser originated
-          while researching a seminar paper on the history of music
-          visualization. I researched, designed and implemented the project from
-          start to finish.
+          used to enhance music visualization. The idea originated while writing
+          a seminar paper on the history of music visualization. I researched,
+          designed and implemented the project from start to finish.
         </p>
         <p>
           A pre-trained neural network called{" "}
@@ -32,17 +40,17 @@ const ProjectMuser = (props) => {
           color palette is based on the 5 most-fitting genres.
         </p>
         <p>
-          This technique also allows us to visualize how the style of a song
-          changes over time:
+          We can use this to visualize how the style of a song changes over
+          time:
         </p>
         <p>
-          <div className="muserTimeline" />
+          <span className="muserTimeline" />
           <strong>Love the Way You Lie</strong> / Eminem feat. Rihanna
         </p>
         <p>
           For example, we can see that this classic song by Eminem and Rihanna
-          song starts with an acoustic intro (bluish) then alternates between
-          rap (red) and pop (yellow) segments.
+          starts with an acoustic intro (bluish) then alternates between rap
+          (red) and pop (yellow) segments.
         </p>
         <p>For more information visit the project website!</p>
         <br />
@@ -50,19 +58,11 @@ const ProjectMuser = (props) => {
 
         <h2>Tools Used</h2>
         <ul className="List">
-          <li>React</li>
+          <li>JavaScript (React.js)</li>
           <li>WebGL (THREE.js + GLSL)</li>
           <li>Python</li>
         </ul>
-        <a
-          href="https://jonshamir.github.io/muser"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Button>
-            <span>Launch Project ></span>
-          </Button>
-        </a>
+
         <figure>
           <Image src="assets/projects/muser/kandinsky.jpg" alt="kandinsky" />
           <span className="Caption">

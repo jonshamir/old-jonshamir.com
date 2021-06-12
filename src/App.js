@@ -6,16 +6,22 @@ import FloatingLogo from "./components/FloatingLogo/FloatingLogo";
 import ContourEffect from "./components/ContourEffect/ContourEffect";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 
+import projectData from "./projects/projectData.js";
+
 import Homepage from "./Homepage/Homepage";
-import Muser from "./projects/Muser";
-import Motion from "./projects/Motion";
-import UnityCG from "./projects/UnityCG";
-import Illustrations from "./projects/Illustrations";
 
 const App = () => {
   const location = useLocation();
   if (window.history.scrollRestoration)
     window.history.scrollRestoration = "manual";
+
+  const projectPaths = projectData.map((project) => {
+    return (
+      <Route path={`/projects/${project.slug}`}>
+        <project.component />
+      </Route>
+    );
+  });
 
   return (
     <div>
@@ -27,18 +33,7 @@ const App = () => {
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route path="/projects/muser">
-            <Muser />
-          </Route>
-          <Route path="/projects/motion">
-            <Motion />
-          </Route>
-          <Route path="/projects/unitycg">
-            <UnityCG />
-          </Route>
-          <Route path="/projects/illustrations">
-            <Illustrations />
-          </Route>
+          {projectPaths}
         </Switch>
       </AnimatePresence>
     </div>

@@ -1,13 +1,19 @@
 @use "src/utils" as *;
 
 .ProjectSection {
+  padding-bottom: 8em;
   h2 {
+    font-weight: normal;
+    font-size: 1.6em;
+    color: #ffffff;
     text-align: center;
     text-transform: uppercase;
   }
 }
 
 .ProjectTile {
+  padding: 0;
+  box-sizing: border-box;
   width: 33%;
   margin: 0;
   display: inline-block;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import projectData from "../../projects/projects.json";
+import projectData from "../../projects/projectData.js";
 
 import Image from "../../components/Image/Image";
 

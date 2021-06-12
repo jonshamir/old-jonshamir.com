@@ -9,11 +9,11 @@ const IntroSection = (props) => {
         <span id="logoInlinePos"></span>
         <h1>Hi! I'm Jon Shamir</h1>
         <p>
-          I am interested in the intersection of art, science and design. I
+          I am interested in the intersection of art, design and technology. I
           believe that design is a powerful tool that has the ability to change
           perceptions and reveal insights. I enjoy working on projects that
-          combine different disciplines into something greater than the sum of
-          its parts!
+          combine different ideas & disciplines into something greater than the
+          sum of its parts!
         </p>
       </div>
     </div>
