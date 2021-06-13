@@ -1,36 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
+import { AspectRatio } from "react-aspect-ratio";
+import "react-aspect-ratio/aspect-ratio.css";
+
 import "./Image.scss";
 
-const Image = ({
-  alt,
-  aspectRatio = "1:1",
-  onLoad = () => null,
-  style = {},
-  className = "",
-  ...rest
-}) => {
+const Image = ({ alt, ratio = 1, style = {}, className = "", ...rest }) => {
   const [hasImageLoaded, setHasImageLoaded] = useState(false);
   const [containerHeight, setContainerHeight] = useState(null);
   const containerRef = useRef(null);
 
   const onImageLoaded = (event) => {
     setHasImageLoaded(true);
-    onLoad(event);
   };
 
-  useEffect(() => {
-    if (containerRef.current) {
-      const [ratioWidth, ratioHeight] = aspectRatio.split(":");
-      const height =
-        (containerRef.current.offsetWidth / ratioWidth) * ratioHeight;
-      setContainerHeight(height);
-    }
-  }, [containerRef, aspectRatio]);
-
   return (
-    <div
-      className={"image-wrapper " + className}
-      ref={containerRef}
+    <AspectRatio
+      className={"imageWrapper " + className}
+      ratio={ratio}
       style={style}
     >
       <img
@@ -39,7 +25,7 @@ const Image = ({
         className={hasImageLoaded ? "image loaded" : "image"}
         alt={alt}
       />
-    </div>
+    </AspectRatio>
   );
 };
 

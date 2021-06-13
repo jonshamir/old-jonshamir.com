@@ -6,10 +6,12 @@ import Image from "../components/Image/Image";
 const GrowthPatterns = (props) => {
   return (
     <ProjectPage>
-      <img
+      <Image
+        ratio="1.53"
         src="assets/projects/growth-patterns/pic2.jpg"
         alt="GrowthPatterns"
         className="Screenshot"
+        style={{ backgroundColor: "#6c6a70" }}
       />
       <div className="section">
         <h1>Growth Patterns</h1>
@@ -20,12 +22,12 @@ const GrowthPatterns = (props) => {
           without any borders or markings, by using dried local plants.
         </p>
         <br />
-        <img
+        <Image
           src="assets/projects/growth-patterns/data1.jpg"
           alt="Data 1"
           className="halfImage"
         />
-        <img
+        <Image
           src="assets/projects/growth-patterns/data2.jpg"
           alt="Data 2"
           className="halfImage"
@@ -42,7 +44,8 @@ const GrowthPatterns = (props) => {
         </p>
         <br />
         <br />
-        <img
+        <Image
+          ratio="1.33:1"
           src="assets/projects/growth-patterns/pic3.jpg"
           alt="GrowthPatterns"
           style={{ width: "90%" }}

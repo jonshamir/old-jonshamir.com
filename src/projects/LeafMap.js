@@ -2,14 +2,17 @@ import React from "react";
 import ProjectPage from "./ProjectPage";
 
 import Button from "../components/Button/Button";
+import Image from "../components/Image/Image";
 
 const LeafMap = (props) => {
   return (
     <ProjectPage>
-      <img
+      <Image
+        ratio="1.95"
         src="assets/projects/leaf-map/screenshot.png"
         alt="Leaf Map screenshot"
         className="Screenshot"
+        style={{ backgroundColor: "#f7f3ee" }}
       />
       <div className="section">
         <a

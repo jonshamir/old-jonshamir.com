@@ -7,10 +7,12 @@ import Image from "../components/Image/Image";
 const ProjectMuser = (props) => {
   return (
     <ProjectPage>
-      <img
+      <Image
+        ratio="2"
         src="assets/projects/muser/screenshot.png"
         alt="Muser Screenshot"
         className="Screenshot"
+        style={{ backgroundColor: "#455d63" }}
       />
       <div className="section">
         <a
