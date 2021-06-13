@@ -55,6 +55,9 @@
     border-radius: 5px;
     max-width: 1600px;
     overflow: hidden;
+    img {
+      object-fit: cover;
+    }
 
     @media screen and (max-width: $mobile-width) {
       border-radius: 0;
