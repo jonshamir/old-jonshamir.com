@@ -96,7 +96,7 @@
     li {
       line-height: 1.8em;
       &::before {
-        content: ">";
+        content: "-";
         display: inline-block;
         margin: 0 0.5em;
       }
