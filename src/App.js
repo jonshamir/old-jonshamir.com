@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Switch, useLocation } from "react-router-dom";
 
@@ -14,6 +14,8 @@ const App = () => {
   const location = useLocation();
   if (window.history.scrollRestoration)
     window.history.scrollRestoration = "manual";
+
+  const [scrollTop, setScrollTop] = useState(0);
 
   const projectPaths = projectData.map((project) => {
     return (
@@ -31,7 +33,7 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
-            <Homepage />
+            <Homepage scrollTop={scrollTop} setScrollTop={setScrollTop} />
           </Route>
           {projectPaths}
         </Switch>

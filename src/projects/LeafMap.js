@@ -32,7 +32,7 @@ const LeafMap = (props) => {
           to their leaf shape. The idea was to create a more intuitive and
           friendly way to recognize plant species.
         </p>
-        <img src="assets/projects/leaf-map/features.png" />
+        <img src="assets/projects/leaf-map/features.png" alt="Leaf Features" />
         <p>
           Using the{" "}
           <OutLink href="https://en.wikipedia.org/wiki/Shape_context">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { AspectRatio } from "react-aspect-ratio";
 import "react-aspect-ratio/aspect-ratio.css";
 
@@ -6,8 +6,6 @@ import "./Image.scss";
 
 const Image = ({ alt, ratio = 1, style = {}, className = "", ...rest }) => {
   const [hasImageLoaded, setHasImageLoaded] = useState(false);
-  const [containerHeight, setContainerHeight] = useState(null);
-  const containerRef = useRef(null);
 
   const onImageLoaded = (event) => {
     setHasImageLoaded(true);
