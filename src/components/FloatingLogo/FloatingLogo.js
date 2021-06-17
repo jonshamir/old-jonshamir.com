@@ -76,6 +76,12 @@ class FloatingLogo extends React.Component {
     }
   };
 
+  onClick(event) {
+    if (this.props.history.location.pathname === "/") {
+      event.preventDefault();
+    }
+  }
+
   render() {
     const { isMinimized, isHomepage } = this.state;
     const { x, y } = this.getInlinePos();
@@ -86,11 +92,16 @@ class FloatingLogo extends React.Component {
 
     const styles = {
       transform: logoTransform,
-      pointerEvents: isHomepage ? "none" : "auto",
+      // pointerEvents: isHomepage ? "none" : "auto",
     };
 
     return (
-      <Link to="/" className="FloatingLogo" style={styles}>
+      <Link
+        onClick={this.onClick.bind(this)}
+        to="/"
+        className="FloatingLogo"
+        style={styles}
+      >
         <JonLogo isVisible={this.state.isLoaded} />
       </Link>
     );

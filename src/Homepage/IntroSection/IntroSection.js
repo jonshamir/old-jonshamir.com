@@ -11,12 +11,14 @@ const IntroSection = (props) => {
         <p>
           I recently graduated from a 5-year program combining computer science
           & design. My interests lie at the intersection of technology and art:
-          graphics, typography, machine learning and data visualization.
+          graphics, typography, machine learning, generative art, data viz and
+          more.
         </p>
         <p>
-          I have extensive experience with web technologies and interactive
-          media. I love working on projects that combine different fields and
-          use technology in new and interesting ways.
+          I have experience with various technologies and mediums. I love
+          working on projects that combine different fields and use technology
+          in new and interesting ways. I am inspired by nature and have a
+          special affinity for plants 🌱
         </p>
       </div>
     </div>

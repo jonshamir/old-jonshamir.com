@@ -23,12 +23,7 @@ const SocialLinks = (props) => {
         <span>GitHub</span>
         <img src="./assets/ui/github.svg" alt="" />
       </a>
-      <a
-        key="resume"
-        href="https://google.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a key="resume" href="assets/resume.pdf" target="_blank" rel="noreferrer">
         <span>Resume</span>
         <img src="./assets/ui/resume.svg" alt="" />
       </a>

@@ -19,7 +19,7 @@ const GrowthPatterns = (props) => {
         <p>
           I created a visualization of population centers in centeral Israel and
           the Palestinian territories. I visualized the data on a blank canvas,
-          without any borders or markings, by using dried local plants.
+          without any borders or markings, by using a local species of grain.
         </p>
         <br />
         <Image
