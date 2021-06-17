@@ -17,9 +17,9 @@ const GrowthPatterns = (props) => {
         <h1>Growth Patterns</h1>
         <p className="subtitle">Population density visualization</p>
         <p>
-          I created a visualization of population centers in centeral Israel and
-          the Palestinian territories. I visualized the data on a blank canvas,
-          without any borders or markings, by using a local species of grain.
+          I created an abstract map of population centers in centeral Israel and
+          the Palestinian territories. I visualized the data on a blank canvas
+          by using different sizes of a local species of grain.
         </p>
         <br />
         <Image
@@ -40,7 +40,7 @@ const GrowthPatterns = (props) => {
         <br />
         <p>
           I tried to emphasize the natural growth pattern of human settlement,
-          regardless of politics or borders.
+          regardless of religion, politics or borders.
         </p>
         <br />
         <br />

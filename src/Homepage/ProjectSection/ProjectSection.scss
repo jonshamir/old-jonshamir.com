@@ -23,9 +23,11 @@
 
   @media screen and (max-width: $tablet-width) {
     width: 50% !important;
+    padding: 0.8em;
   }
 
   @media screen and (max-width: $mobile-width) {
+    padding: 0em;
     width: 100% !important;
   }
 

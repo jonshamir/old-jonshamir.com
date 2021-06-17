@@ -60,27 +60,13 @@ const ProjectMuser = (props) => {
         </p>
         <p>For more information visit the project website!</p>
         <br />
-        <br />
-
-        <h2>Tools Used</h2>
-        <ul className="List">
-          <li>JavaScript (React.js)</li>
-          <li>WebGL (THREE.js + GLSL)</li>
-          <li>Python</li>
-        </ul>
-
         <figure>
           <Image src="assets/projects/muser/kandinsky.jpg" alt="kandinsky" />
           <span className="Caption">
             <span>Circles in a Circle </span>by Wassily Kandinsky, 1923
           </span>
         </figure>
-        <p>
-          Muser is inspired by Wassily Kandinsky (1866-1944). Generally credited
-          as the pioneer of abstract art, his work is well-known for its musical
-          influences. Kandinsky associated specific tones and instruments to
-          shapes and colors, thus “visualizing” a musical composition.
-        </p>
+
         <p>
           Colors for each genre were chosen according to the{" "}
           <a href="https://musicmap.info/" target="_blank" rel="noreferrer">
@@ -89,6 +75,19 @@ const ProjectMuser = (props) => {
           project so that music genres which are stylistically closer will get
           similar colors.
         </p>
+        <p>
+          Muser is inspired by Wassily Kandinsky (1866-1944). Generally credited
+          as the pioneer of abstract art, his work is well-known for its musical
+          influences. Kandinsky associated specific tones and instruments to
+          shapes and colors, thus “visualizing” a musical composition.
+        </p>
+        <br />
+        <h2>Tools Used</h2>
+        <ul className="List">
+          <li>JavaScript (React.js)</li>
+          <li>WebGL (THREE.js + GLSL)</li>
+          <li>Python</li>
+        </ul>
       </div>
       <img
         src="assets/projects/muser/circles.png"

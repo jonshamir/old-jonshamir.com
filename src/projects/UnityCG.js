@@ -43,7 +43,7 @@ const ProjectCG = (props) => {
           <a href="https://en.huji.ac.il/" target="_blank" rel="noreferrer">
             the Hebrew University
           </a>{" "}
-          from the ground up. The idea was to teach Computer Graphics in a more
+          from the ground up. The goal was to teach Computer Graphics in a more
           engaging way, using the real-time interactivity of the{" "}
           <a href="https://unity.com/" target="_blank" rel="noreferrer">
             Unity game engine
