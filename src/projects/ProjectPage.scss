@@ -72,7 +72,6 @@
     position: absolute;
     top: 3em;
     right: 10em;
-    background-color: #ffffff;
     z-index: 101;
 
     @media screen and (max-width: $tablet-width) {
@@ -88,7 +87,6 @@
 
   .subtitle {
     font-weight: bold;
-    color: #ffffff;
   }
   h1 {
     font-weight: normal;

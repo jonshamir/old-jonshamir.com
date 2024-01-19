@@ -5,13 +5,18 @@
   border: 0;
   padding: 0.7em 1em 0.6em 1em;
   cursor: pointer;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+
   transition: background-color $transition-defaults,
-    transform $transition-defaults;
+    transform $transition-defaults, color $transition-defaults;
   transform: translateX(0);
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 0.9em;
+  border-radius: 0.4em;
 
   &:hover {
-    background-color: #ddd;
+    opacity: 0.8;
     transform: translateX(5px);
   }
 }

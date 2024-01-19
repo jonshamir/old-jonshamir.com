@@ -1,5 +1,9 @@
 @use "src/utils" as *;
 
+.dark .SocialLinks a img {
+  filter: none;
+}
+
 .SocialLinks {
   position: fixed;
   z-index: 150;
@@ -29,6 +33,7 @@
       vertical-align: middle;
       opacity: 0.6;
       transition: opacity $transition-defaults;
+      filter: invert(1);
     }
     span {
       color: var(--color-text) !important;

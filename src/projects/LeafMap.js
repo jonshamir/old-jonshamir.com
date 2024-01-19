@@ -22,7 +22,7 @@ const LeafMap = (props) => {
           rel="noreferrer"
         >
           <Button>
-            <span>Launch Project ></span>
+            <span>Launch Project →</span>
           </Button>
         </a>
         <h1>Leaf Map</h1>
