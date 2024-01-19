@@ -3,6 +3,7 @@ uniform vec2 u_mouse;
 uniform float u_time;
 uniform float u_scroll;
 uniform float u_pixel_ratio;
+uniform float u_theme;
 
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -89,7 +90,7 @@ void main() {
   // Mouse warp
   // x -= 0.1*pow((1.0 - clamp(0.0, 1.0, distance(st, mouse))), 2.0);
 
-  color = contours(x, 4.0) + 0.4;
+  color = contours(x, 4.0) + ((u_theme > 0.0) ? 0.0 : 0.5);
   //color = vec3(x,x,x);
 
   gl_FragColor = vec4(color, 1.0);

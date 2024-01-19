@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useColorTheme } from "../DarkModeToggle/useColorTheme";
 import "./ContourEffect.scss";
@@ -11,26 +11,25 @@ let camera, scene, renderer;
 let uniforms;
 const PIXEL_RATIO = 1; //window.devicePixelRatio || 1;
 
-class ContourEffect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.canvasRef = React.createRef();
-  }
+export const ContourEffect = (props) => {
+  const { shouldDisplay } = props;
+  const { isDark, _ } = useColorTheme();
+  const canvasRef = useRef();
+  const materialRef = useRef();
+  const [didInit, setDidInit] = useState(false);
 
-  componentDidMount() {
-    this.initScene();
-    this.handleResize();
-    window.addEventListener("resize", this.handleResize);
-    window.addEventListener("scroll", this.handleScroll);
-  }
+  useEffect(() => {
+    if (!didInit) {
+      initScene();
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("scroll", handleScroll);
+      setDidInit(true);
+    }
+  });
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  initScene() {
-    container = this.canvasRef.current;
+  function initScene() {
+    container = canvasRef.current;
 
     camera = new THREE.Camera();
     camera.position.z = 1;
@@ -45,10 +44,10 @@ class ContourEffect extends React.Component {
       u_resolution: { type: "v2", value: new THREE.Vector2() },
       u_mouse: { type: "v2", value: new THREE.Vector2() },
       u_scroll: { type: "f", value: 0 },
-      u_scroll: { type: "f", value: 0 },
+      u_theme: { type: "f", value: isDark ? 1 : 0 },
     };
 
-    var material = new THREE.ShaderMaterial({
+    materialRef.current = new THREE.ShaderMaterial({
       uniforms: uniforms,
       vertexShader: vertexShader,
       fragmentShader: fragmentShader,
@@ -57,11 +56,10 @@ class ContourEffect extends React.Component {
       },
     });
 
-    var mesh = new THREE.Mesh(geometry, material);
+    var mesh = new THREE.Mesh(geometry, materialRef.current);
     scene.add(mesh);
 
     renderer = new THREE.WebGLRenderer();
-    // renderer.setPixelRatio(window.devicePixelRatio);
 
     container.appendChild(renderer.domElement);
 
@@ -72,7 +70,7 @@ class ContourEffect extends React.Component {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      if (this.props.shouldDisplay) {
+      if (props.shouldDisplay) {
         uniforms.u_time.value += 0.03;
         renderer.render(scene, camera);
       }
@@ -80,34 +78,33 @@ class ContourEffect extends React.Component {
     animate();
   }
 
-  handleResize(e) {
+  function handleResize() {
     const BORDER = 15 * 2 * 0;
     const w = window.innerWidth - BORDER;
     const h = 0.8 * window.innerHeight - BORDER;
     renderer.setSize(w, h);
-    // renderer.setPixelRatio(0.5);
     uniforms.u_resolution.value.x = w;
     uniforms.u_resolution.value.y = h;
   }
 
-  handleScroll() {
+  function handleScroll() {
     const currScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
     uniforms.u_scroll.value = currScroll / 1000;
   }
 
-  render() {
-    const { shouldDisplay } = this.props;
-    // const { isDark, setIsDark } = useColorTheme();
-
-    return (
-      <div
-        className={shouldDisplay ? "ContourEffect" : "ContourEffect hidden"}
-        ref={this.canvasRef}
-      ></div>
-    );
+  if (materialRef.current) {
+    console.log("isDark", isDark);
+    materialRef.current.uniforms.u_theme.value = isDark ? 1 : 0;
   }
-}
+
+  return (
+    <div
+      className={shouldDisplay ? "ContourEffect" : "ContourEffect hidden"}
+      ref={canvasRef}
+    ></div>
+  );
+};
 
 export default ContourEffect;
