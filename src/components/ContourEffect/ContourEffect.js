@@ -1,5 +1,6 @@
 import React from "react";
 import * as THREE from "three";
+import { useColorTheme } from "../DarkModeToggle/useColorTheme";
 import "./ContourEffect.scss";
 
 import vertexShader from "./shader.vert";
@@ -44,6 +45,7 @@ class ContourEffect extends React.Component {
       u_resolution: { type: "v2", value: new THREE.Vector2() },
       u_mouse: { type: "v2", value: new THREE.Vector2() },
       u_scroll: { type: "f", value: 0 },
+      u_scroll: { type: "f", value: 0 },
     };
 
     var material = new THREE.ShaderMaterial({
@@ -81,7 +83,7 @@ class ContourEffect extends React.Component {
   handleResize(e) {
     const BORDER = 15 * 2 * 0;
     const w = window.innerWidth - BORDER;
-    const h = window.innerHeight - BORDER;
+    const h = 0.8 * window.innerHeight - BORDER;
     renderer.setSize(w, h);
     // renderer.setPixelRatio(0.5);
     uniforms.u_resolution.value.x = w;
@@ -97,6 +99,8 @@ class ContourEffect extends React.Component {
 
   render() {
     const { shouldDisplay } = this.props;
+    // const { isDark, setIsDark } = useColorTheme();
+
     return (
       <div
         className={shouldDisplay ? "ContourEffect" : "ContourEffect hidden"}

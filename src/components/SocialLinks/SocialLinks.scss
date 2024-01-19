@@ -7,6 +7,10 @@
   top: 0;
   box-sizing: border-box;
   padding: 3em 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
 
   @media screen and (max-width: $mobile-width) {
     bottom: auto;
@@ -16,20 +20,18 @@
 
   a {
     display: block;
-    padding: 0.2em;
     text-align: right;
     position: relative;
 
     img {
       width: 1.2em;
       height: 1.2em;
-      margin: 0.5em 1em;
       vertical-align: middle;
       opacity: 0.6;
       transition: opacity $transition-defaults;
     }
     span {
-      color: $text-color !important;
+      color: var(--color-text) !important;
       text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.45);
       display: inline-block;
       transition: all $transition-defaults;

@@ -1,10 +1,12 @@
 import React from "react";
+import { DarkModeToggle } from "../DarkModeToggle/DarkModeToggle";
 
 import "./SocialLinks.scss";
 
 const SocialLinks = (props) => {
   return (
     <div className="SocialLinks">
+      <DarkModeToggle />
       <a
         key="instagram"
         href="https://www.instagram.com/yonshamir/"

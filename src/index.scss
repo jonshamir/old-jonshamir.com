@@ -21,8 +21,18 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: $bg-color;
-  color: $text-color;
+  --color-text: #333333;
+  --color-bg: #fafafa;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  transition: color $transition-defaults, background-color $transition-defaults;
+
+  &.dark {
+    --color-text: #fafafa;
+    --color-bg: #333333;
+  }
 }
 
 body,
@@ -40,7 +50,7 @@ p {
 }
 
 a {
-  color: $text-color !important;
+  color: var(--color-text) !important;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
@@ -74,6 +84,6 @@ h2 {
 }
 
 ::selection {
-  background: $text-color;
-  color: $bg-color;
+  background: var(--color-text);
+  color: var(--color-bg);
 }

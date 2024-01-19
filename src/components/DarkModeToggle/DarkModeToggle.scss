@@ -1,0 +1,23 @@
+@use "src/utils" as *;
+
+.DarkModeToggle {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 2rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-text);
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  transition: border-color $transition-defaults;
+
+  &::before {
+    content: " ";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-text);
+    transition: background-color $transition-defaults;
+  }
+}

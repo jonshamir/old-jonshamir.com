@@ -89,7 +89,7 @@ void main() {
   // Mouse warp
   // x -= 0.1*pow((1.0 - clamp(0.0, 1.0, distance(st, mouse))), 2.0);
 
-  color = contours(x, 7.0);
+  color = contours(x, 4.0) + 0.4;
   //color = vec3(x,x,x);
 
   gl_FragColor = vec4(color, 1.0);
