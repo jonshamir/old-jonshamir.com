@@ -95,7 +95,6 @@ export const ContourEffect = (props) => {
   }
 
   if (materialRef.current) {
-    console.log("isDark", isDark);
     materialRef.current.uniforms.u_theme.value = isDark ? 1 : 0;
   }
 
