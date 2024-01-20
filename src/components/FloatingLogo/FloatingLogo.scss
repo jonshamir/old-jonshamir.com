@@ -5,8 +5,11 @@
   top: 0;
   left: 0;
   transform: scale(0.5);
-  transition: transform $transition-defaults;
+  transition: transform $transition-defaults,
+    background-color $transition-defaults;
   z-index: 150;
+
+  @include blur-bg;
 
   @media screen and (max-width: $tablet-width) {
     margin-top: -10px;

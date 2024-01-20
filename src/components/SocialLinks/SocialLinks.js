@@ -1,12 +1,17 @@
 import React from "react";
 import { DarkModeToggle } from "../DarkModeToggle/DarkModeToggle";
+import { useColorTheme } from "../DarkModeToggle/useColorTheme";
 
 import "./SocialLinks.scss";
 
-const SocialLinks = (props) => {
+const SocialLinks = () => {
+  const { isDark } = useColorTheme();
   return (
     <div className="SocialLinks">
-      <DarkModeToggle />
+      <a>
+        <span>{isDark ? "Light" : "Dark"} Mode</span>
+        <DarkModeToggle />
+      </a>
       <a
         key="instagram"
         href="https://www.instagram.com/yonshamir/"

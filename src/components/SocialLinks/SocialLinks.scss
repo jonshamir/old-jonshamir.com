@@ -19,7 +19,7 @@
   @media screen and (max-width: $mobile-width) {
     bottom: auto;
     top: 0;
-    padding: 0.75em 0.25em;
+    padding: 1em 1em;
   }
 
   a {
@@ -37,16 +37,20 @@
     }
     span {
       color: var(--color-text) !important;
-      text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.45);
+      // text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.45);
       display: inline-block;
       transition: all $transition-defaults;
       opacity: 0;
-      transform: translate(-30px, -50%);
+      transform: translate(-2em, -50%);
       position: absolute;
       top: 50%;
-      right: 3em;
+      right: 2em;
       text-align: right;
       pointer-events: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      padding: 0.3rem 0.5rem;
+      @include blur-bg;
     }
 
     &:hover {

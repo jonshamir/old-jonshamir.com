@@ -13,7 +13,7 @@ const PIXEL_RATIO = 1; //window.devicePixelRatio || 1;
 
 export const ContourEffect = (props) => {
   const { shouldDisplay } = props;
-  const { isDark, _ } = useColorTheme();
+  const { isDark } = useColorTheme();
   const canvasRef = useRef();
   const materialRef = useRef();
   const [didInit, setDidInit] = useState(false);
