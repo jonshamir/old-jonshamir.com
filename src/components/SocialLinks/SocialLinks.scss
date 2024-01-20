@@ -13,13 +13,12 @@
   padding: 3em 2.5em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
   align-items: center;
 
   @media screen and (max-width: $mobile-width) {
     bottom: auto;
     top: 0;
-    padding: 1em 1em;
+    padding: 1.2em;
   }
 
   a {
@@ -34,6 +33,7 @@
       opacity: 0.8;
       transition: opacity $transition-defaults, filter $transition-defaults;
       filter: invert(1);
+      padding: 0.6rem;
     }
     span {
       color: var(--color-text) !important;
@@ -44,7 +44,7 @@
       transform: translate(-2em, -50%);
       position: absolute;
       top: 50%;
-      right: 2em;
+      right: 2.2em;
       text-align: right;
       pointer-events: none;
       font-size: 0.9rem;

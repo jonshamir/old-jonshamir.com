@@ -1,19 +1,24 @@
 @use "src/utils" as *;
 
 .DarkModeToggle {
+  cursor: pointer;
+  padding: 0.5em;
+  display: block;
+}
+
+#DarkModeToggle {
   appearance: none;
   -webkit-appearance: none;
   border-radius: 2rem;
   border-width: 1.5px;
   border-style: solid;
   border-color: var(--color-text);
-  width: 1em;
-  height: 1em;
-  cursor: pointer;
+  width: 0.9em;
+  height: 0.9em;
   transition: border $transition-defaults;
   position: relative;
   transform: rotate(-45deg);
-  margin: 0;
+  cursor: pointer;
 
   &::after,
   &::before {
@@ -40,7 +45,7 @@
   }
 }
 
-.dark .DarkModeToggle {
+.dark #DarkModeToggle {
   border-color: var(--color-bg);
 
   &::before {
@@ -49,6 +54,6 @@
 
   &::after {
     background-color: var(--color-text);
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }

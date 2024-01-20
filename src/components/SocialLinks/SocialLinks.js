@@ -31,6 +31,15 @@ const SocialLinks = () => {
         <img src="./assets/ui/github.svg" alt="" />
       </a>
       <a
+        key="twitter"
+        href="https://www.twitter.com/jonshamir/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Twitter</span>
+        <img src="./assets/ui/twitterx.svg" alt="" />
+      </a>
+      <a
         key="linkedin"
         href="https://www.linkedin.com/in/jonshamir/"
         target="_blank"
@@ -39,10 +48,10 @@ const SocialLinks = () => {
         <span>LinkedIn</span>
         <img src="./assets/ui/linkedin.svg" alt="" />
       </a>
-      <a key="resume" href="resume.pdf" target="_blank" rel="noreferrer">
+      {/* <a key="resume" href="resume.pdf" target="_blank" rel="noreferrer">
         <span>Resume</span>
         <img src="./assets/ui/resume.svg" alt="" />
-      </a>
+      </a> */}
     </div>
   );
 };
