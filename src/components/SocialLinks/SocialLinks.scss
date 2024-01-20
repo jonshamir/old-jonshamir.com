@@ -31,8 +31,8 @@
       width: 1.2em;
       height: 1.2em;
       vertical-align: middle;
-      opacity: 0.6;
-      transition: opacity $transition-defaults;
+      opacity: 0.8;
+      transition: opacity $transition-defaults, filter $transition-defaults;
       filter: invert(1);
     }
     span {
