@@ -58,6 +58,7 @@ p {
 a {
   color: var(--color-text) !important;
   text-decoration: underline;
+  transition: color $transition-defaults;
   &:hover {
     text-decoration: none;
   }
