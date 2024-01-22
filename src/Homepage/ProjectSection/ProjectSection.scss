@@ -54,27 +54,22 @@
       background-color: transparent;
       padding-top: 1em;
       padding-left: 1em;
-      padding-bottom: 3em;
+      padding-bottom: 1em;
 
-      h3,
-      h4 {
+      h3 {
         opacity: 1 !important;
         transform: none !important;
-        margin-bottom: 0 !important;
       }
     }
 
-    h3,
-    h4 {
-      font-size: 1.5em;
-      font-weight: normal;
-
+    h3 {
       margin: 0;
       margin-bottom: 0.3em;
+      font-size: 1.2em;
+      font-family: "Satoshi-Medium";
+      letter-spacing: 0.03em;
     }
-    h4 {
-      font-size: 1em;
-      font-weight: normal;
+    span {
       opacity: 0.7;
     }
   }

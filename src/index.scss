@@ -1,5 +1,7 @@
 @use "src/utils" as *;
 
+@import url("satoshi.css");
+
 @font-face {
   font-family: ArbelHagilda;
   src: url("./fonts/ArbelHagildaRegular.otf");
@@ -62,6 +64,14 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Satoshi-Bold";
+  font-weight: bold;
 }
 
 h2 {

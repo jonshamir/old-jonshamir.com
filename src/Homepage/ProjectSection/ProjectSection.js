@@ -24,7 +24,7 @@ const ProjectSection = (props) => {
             />
             <div className="info">
               <h3>{project.name}</h3>
-              <h4>{project.subtitle}</h4>
+              <span>{project.subtitle}</span>
             </div>
           </Link>
         ))}
