@@ -1,11 +1,10 @@
 @use "src/utils" as *;
 
 .Button {
-  background-color: #888;
   border: 0;
   padding: 0.7em 1em 0.6em 1em;
   cursor: pointer;
-  background-color: var(--color-text);
+  background-color: rgba(var(--color-text-rgb), 0.85);
   color: var(--color-bg);
 
   transition: background-color $transition-defaults,
