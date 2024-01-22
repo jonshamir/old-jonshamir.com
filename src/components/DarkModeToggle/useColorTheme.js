@@ -19,10 +19,13 @@ export function useColorTheme() {
   );
 
   useEffect(() => {
+    const favicon = document.querySelector('link[rel="icon"]');
     if (value) {
       document.body.classList.add("dark");
+      favicon.href = "/favicon-dark.png";
     } else {
       document.body.classList.remove("dark");
+      favicon.href = "/favicon-light.png";
     }
   }, [value]);
 

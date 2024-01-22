@@ -9,7 +9,7 @@
     background-color $transition-defaults;
   z-index: 150;
 
-  @include blur-bg;
+  // @include blur-bg;
 
   @media screen and (max-width: $tablet-width) {
     margin-top: -10px;
