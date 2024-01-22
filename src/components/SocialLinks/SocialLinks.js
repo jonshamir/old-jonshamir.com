@@ -8,11 +8,12 @@ const SocialLinks = () => {
   const { isDark } = useColorTheme();
   return (
     <div className="SocialLinks">
-      <a>
+      <span className="item">
         <span>{isDark ? "Light" : "Dark"} Mode</span>
         <DarkModeToggle />
-      </a>
+      </span>
       <a
+        className="item"
         key="instagram"
         href="https://www.instagram.com/yonshamir/"
         target="_blank"
@@ -22,6 +23,7 @@ const SocialLinks = () => {
         <img src="./assets/ui/instagram.svg" alt="" />
       </a>
       <a
+        className="item"
         key="github"
         href="https://github.com/jonshamir"
         target="_blank"
@@ -31,6 +33,7 @@ const SocialLinks = () => {
         <img src="./assets/ui/github.svg" alt="" />
       </a>
       <a
+        className="item"
         key="twitter"
         href="https://www.twitter.com/jonshamir/"
         target="_blank"
@@ -40,6 +43,7 @@ const SocialLinks = () => {
         <img src="./assets/ui/twitterx.svg" alt="" />
       </a>
       <a
+        className="item"
         key="linkedin"
         href="https://www.linkedin.com/in/jonshamir/"
         target="_blank"

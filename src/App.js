@@ -3,7 +3,6 @@ import { AnimatePresence } from "framer-motion";
 import { Route, Switch, useLocation } from "react-router-dom";
 
 import FloatingLogo from "./components/FloatingLogo/FloatingLogo";
-import ContourEffect from "./components/ContourEffect/ContourEffect";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 
 import projectData from "./projects/projectData.js";

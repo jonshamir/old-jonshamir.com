@@ -26,8 +26,9 @@ export const ContourEffect = (props) => {
       window.addEventListener("scroll", handleScroll);
       setDidInit(true);
     }
-  });
+  }, [didInit, initScene]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function initScene() {
     container = canvasRef.current;
 

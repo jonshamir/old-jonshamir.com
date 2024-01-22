@@ -2,11 +2,12 @@ import Muser from "./Muser";
 import HerbTree from "./HerbTree";
 import UnityCG from "./UnityCG";
 import Scopus from "./Scopus";
-import Cavorite from "./Cavorite";
-import TelAviv from "./TelAviv";
-import GenerativeLeaves from "./GenerativeLeaves";
-import GrowthPatterns from "./GrowthPatterns";
 import LeafMap from "./LeafMap";
+
+// import Cavorite from "./Cavorite";
+// import TelAviv from "./TelAviv";
+// import GenerativeLeaves from "./GenerativeLeaves";
+// import GrowthPatterns from "./GrowthPatterns";
 
 const projectData = [
   {
