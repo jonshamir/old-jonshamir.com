@@ -9,7 +9,7 @@ import "./ProjectSection.scss";
 const ProjectSection = (props) => {
   return (
     <div className="ProjectSection section">
-      <h2>Recent Projects</h2>
+      <h2>Projects</h2>
       <div className="projectTiles">
         {projectData.map((project) => (
           <Link
@@ -24,7 +24,7 @@ const ProjectSection = (props) => {
             />
             <div className="info">
               <h3>{project.name}</h3>
-              <h4>{project.subtitle}</h4>
+              <span>{project.subtitle}</span>
             </div>
           </Link>
         ))}

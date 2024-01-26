@@ -1,6 +1,10 @@
-$text-color: #e0e0e0;
-$bg-color: #202020;
 $transition-defaults: 250ms ease;
 
 $tablet-width: 1100px;
 $mobile-width: 600px;
+
+@mixin blur-bg {
+  background-color: rgba(var(--color-bg-rgb), 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+}

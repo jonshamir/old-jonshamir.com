@@ -25,6 +25,7 @@ const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onAnimationComplete={onExit}
+      transition={{ duration: 0.2 }}
     >
       <IntroSection />
       <ProjectSection />

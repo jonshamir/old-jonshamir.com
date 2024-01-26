@@ -1,6 +1,7 @@
 $size: 4px;
 $width: 5 * $size;
-$colors: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
+$colors-light: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
+$colors-dark: #333, #000, #333, #555, #000, #555;
 
 @function pow($number, $exponent) {
   $value: 1;
@@ -40,7 +41,7 @@ $colors: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
   }
 }
 
-@mixin box($width, $height) {
+@mixin box($width, $height, $colors) {
   .face {
     position: absolute;
     margin: (-0.5 * $height) (-0.5 * $width);
@@ -57,10 +58,15 @@ $colors: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
     .face:nth-child(#{$i + 1}) {
       transform: if($i < 4, rotateY($i * 90deg), rotateX(pow(-1, $i) * 90deg))
         translateZ(0.5 * if($i < 4, $width, $height));
-      background: nth($colors, $i + 1);
+      background-color: nth($colors, $i + 1);
+      transition: background-color 300ms ease;
     }
   }
 }
+
+// .dark .face {
+//   background-color: red !important;
+// }
 
 @keyframes rotate {
   0% {
@@ -82,20 +88,32 @@ $colors: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
 
 .top {
   transform: rotateZ(90deg) translate(-10 * $size, 5 * $size);
-  @include box($width, 12 * $size);
+  @include box($width, 12 * $size, $colors-dark);
+}
+.dark .top {
+  @include box($width, 12 * $size, $colors-light);
 }
 
 .bottom {
   transform: rotateZ(90deg) translate3d(10 * $size, -5 * $size, 0);
-  @include box($width, 12 * $size);
+  @include box($width, 12 * $size, $colors-dark);
+}
+.dark .bottom {
+  @include box($width, 12 * $size, $colors-light);
 }
 
 .middle {
   transform: rotateZ(90deg);
-  @include box($width, 22 * $size);
+  @include box($width, 22 * $size, $colors-dark);
+}
+.dark .middle {
+  @include box($width, 22 * $size, $colors-light);
 }
 
 .side {
   transform: translate3d(8.5 * $size, 5 * $size, 0);
-  @include box($width, 6 * $size);
+  @include box($width, 6 * $size, $colors-dark);
+}
+.dark .side {
+  @include box($width, 6 * $size, $colors-light);
 }

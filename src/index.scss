@@ -1,5 +1,7 @@
 @use "src/utils" as *;
 
+@import url("satoshi.css");
+
 @font-face {
   font-family: ArbelHagilda;
   src: url("./fonts/ArbelHagildaRegular.otf");
@@ -21,17 +23,33 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: $bg-color;
-  color: $text-color;
+  --color-text: #333333;
+  --color-bg: #eee;
+
+  --color-text-rgb: 51, 51, 51;
+  --color-bg-rgb: 238, 238, 238;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  transition: color $transition-defaults, background-color $transition-defaults;
+
+  &.dark {
+    --color-text: #fafafa;
+    --color-bg: #222222;
+
+    --color-text-rgb: 250, 250, 250;
+    --color-bg-rgb: 34, 34, 34;
+  }
 }
 
 body,
 button,
 input {
-  font-family: "ArbelHagilda", monospace, sans-serif;
+  font-family: "Work Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 p {
@@ -40,11 +58,20 @@ p {
 }
 
 a {
-  color: $text-color !important;
+  color: var(--color-text) !important;
   text-decoration: underline;
+  transition: color $transition-defaults;
   &:hover {
     text-decoration: none;
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Satoshi-Bold";
+  font-weight: bold;
 }
 
 h2 {
@@ -74,6 +101,6 @@ h2 {
 }
 
 ::selection {
-  background: $text-color;
-  color: $bg-color;
+  background: var(--color-text);
+  color: var(--color-bg);
 }

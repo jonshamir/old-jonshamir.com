@@ -18,7 +18,7 @@ const HerbTree = (props) => {
       <div className="section">
         <a href="http://herbtree.co.il" target="_blank" rel="noreferrer">
           <Button>
-            <span>Launch Project ></span>
+            <span>Launch Project →</span>
           </Button>
         </a>
         <h1>Herb Tree</h1>
