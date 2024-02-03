@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Switch, useLocation } from "react-router-dom";
+import posthog from "posthog-js";
 
 import FloatingLogo from "./components/FloatingLogo/FloatingLogo";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
@@ -8,6 +9,10 @@ import SocialLinks from "./components/SocialLinks/SocialLinks";
 import projectData from "./projects/projectData.js";
 
 import Homepage from "./Homepage/Homepage";
+
+posthog.init("phc_Ud6pwqtRXUUeeC5zAjDoPZ7MYE41EdRWPMY2gdni1Yt", {
+  api_host: "https://app.posthog.com",
+});
 
 const App = () => {
   const location = useLocation();
