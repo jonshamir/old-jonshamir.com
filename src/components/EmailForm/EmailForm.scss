@@ -2,23 +2,36 @@
 
 .EmailForm {
   padding-bottom: 8em;
-  font-size: 1rem;
+  font-size: 0.9rem;
 
-  input {
+  input,
+  button {
     font-family: "Work Sans";
-    margin: 0.5em;
+    margin: 0.3em;
+    padding: 0.4rem 0.8rem;
+    border: 0;
+    border-radius: 0.5rem;
   }
 
   input[type="text"] {
-    border: 0;
-    padding: 0.3em 0.6em;
-    border-radius: 500px;
+    background-color: rgba(var(--color-text-rgb), 0.8);
+    transition: background-color $transition-defaults;
+    min-width: 200px;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(var(--color-text-rgb), 1);
+    }
   }
 
   button {
-    border: 0;
-    padding: 0.3em 0.6em;
-    border-radius: 500px;
     cursor: pointer;
+    background-color: rgba(var(--color-text-rgb), 0.3);
+    color: var(--color-text);
+    transition: background-color $transition-defaults;
+
+    &:hover {
+      background-color: rgba(var(--color-text-rgb), 0.4);
+    }
   }
 }

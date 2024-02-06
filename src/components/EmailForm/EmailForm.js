@@ -125,16 +125,7 @@ function EmailForm() {
     default:
       return (
         <div className="EmailForm section">
-          <form
-            onSubmit={handleSubmit}
-            style={{
-              display: "flex",
-              flexDirection: isInline ? "row" : "column",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="email"
