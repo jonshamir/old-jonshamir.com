@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import IntroSection from "./IntroSection/IntroSection";
 import ProjectSection from "./ProjectSection/ProjectSection";
+import EmailForm from "../components/EmailForm/EmailForm";
 
 const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
   // Scroll restoration
@@ -29,6 +30,7 @@ const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
     >
       <IntroSection />
       <ProjectSection />
+      <EmailForm />
     </motion.div>
   );
 };
