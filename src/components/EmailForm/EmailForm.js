@@ -1,8 +1,5 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "./EmailForm.scss";
-
-import { useState } from "react";
 
 const INIT = "INIT";
 const SUBMITTING = "SUBMITTING";
@@ -105,8 +102,6 @@ function EmailForm() {
         localStorage.setItem("loops-form-timestamp", "");
       });
   };
-
-  const isInline = formStyles.formStyle === "inline";
 
   switch (formState) {
     case SUCCESS:

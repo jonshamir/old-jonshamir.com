@@ -8,27 +8,32 @@
   button {
     font-family: "Work Sans";
     margin: 0.3em;
-    padding: 0.4rem 0.8rem;
     border: 0;
-    border-radius: 0.5rem;
   }
 
   input[type="text"] {
-    background-color: rgba(var(--color-text-rgb), 0.8);
-    transition: background-color $transition-defaults;
+    color: var(--color-text);
+    background-color: transparent;
+    border-bottom: 2px solid rgba(var(--color-text-rgb), 0.5);
+    // background-color: rgba(var(--color-text-rgb), 0.8);
+    transition: border $transition-defaults;
     min-width: 200px;
+    padding: 0.5rem;
 
     &:hover,
     &:focus {
-      background-color: rgba(var(--color-text-rgb), 1);
+      border-bottom: 2px solid rgba(var(--color-text-rgb), 1);
     }
   }
 
   button {
     cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
     background-color: rgba(var(--color-text-rgb), 0.3);
     color: var(--color-text);
-    transition: background-color $transition-defaults;
+    transition: background-color $transition-defaults,
+      color $transition-defaults;
 
     &:hover {
       background-color: rgba(var(--color-text-rgb), 0.4);
