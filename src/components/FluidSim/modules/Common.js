@@ -22,13 +22,14 @@ class Common {
 
     this.resize();
 
-    this.renderer = new THREE.WebGLRenderer({
+    this.renderer = new THREE.WebGL1Renderer({
       alpha: true,
     });
 
     this.renderer.autoClear = false;
     this.renderer.setSize(this.width, this.height);
     this.renderer.setPixelRatio(this.pixelRatio);
+
     this.clock = new THREE.Clock();
     this.clock.start();
   }
