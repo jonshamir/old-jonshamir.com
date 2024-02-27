@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import IntroSection from "./IntroSection/IntroSection";
 import ProjectSection from "./ProjectSection/ProjectSection";
+import FluidSim from "../components/FluidSim/FluidSim";
 
 const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
   // Scroll restoration
@@ -27,6 +28,7 @@ const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
       onAnimationComplete={onExit}
       transition={{ duration: 0.2 }}
     >
+      <FluidSim />
       <IntroSection />
       <ProjectSection />
     </motion.div>
