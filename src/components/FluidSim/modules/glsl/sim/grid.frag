@@ -17,7 +17,7 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.004 + 0.1 * strength;
+    float baseRadius = 0.004 + pow(strength, 1.5) * 0.15;
     float minRadius = 0.06; // max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
@@ -69,9 +69,9 @@ void main(){
         uv0 + rotate(offset, -M_PI_3),
         strength
     );
-    vec3 color = clamp(vec3(r,g,b) + 0.45, 0.0, 1.0);    
+    vec3 color = clamp(vec3(r,g,b) + 0.3, 0.0, 1.0);    
     //color = theme == 1.0 ? color : 1.0 - color;
 
-    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.8));
+    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.7));
     // gl_FragColor = vec4(mask, mask, mask, 1.0);
 }
