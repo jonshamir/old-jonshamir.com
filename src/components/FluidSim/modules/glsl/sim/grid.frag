@@ -18,7 +18,7 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.008 + pow(strength, 1.5) * 0.15;
+    float baseRadius = 0.01 + pow(strength, 1.5) * 0.15;
     float minRadius = 0.06; // max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
@@ -41,7 +41,7 @@ void main(){
     // ====================================
 
     // grid size
-    vec2 n = resolution.xy * 0.03;
+    vec2 n = resolution.xy * 0.025;
     vec2 uv0 = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
 
     // grid dots
@@ -50,7 +50,7 @@ void main(){
 
     vec2 uvGridIndex = ceil(uv * n) / n;
     uvGridIndex *= step(uvGridIndex, vec2((n-margin)/n));
-    uvGridIndex *= 1.0 - step(uvGridIndex, vec2((margin)/n));
+    uvGridIndex *= 1.0 - step(uvGridIndex, vec2((margin + 0.1)/n));
     float marginMask = 1.0 - step(min(uvGridIndex.x, uvGridIndex.y), 0.0);
     
     float r = circle(
@@ -65,8 +65,8 @@ void main(){
         uv0 + rotate(offset, -M_PI_3),
         strength
     );
-    vec3 color = clamp(vec3(r,g,b) + 0.3, 0.0, 1.0);    
-    color = darkTheme == 1.0 ? color : 1.0 - color;
+    vec3 color = sqrt(clamp(vec3(r,g,b), 0.0, 1.0));
+    color = darkTheme == 1.0 ? color + 0.1 : 1.0 - color;
 
-    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.6));
+    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.5));
 }
