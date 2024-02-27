@@ -37,18 +37,13 @@ void main() {
     float ratio = u_resolution.x / u_resolution.y;
     vec2 uv = (gl_FragCoord.xy - u_resolution.xy) / u_resolution.xy;
 
-    vec2 mousePos = u_mouse; // u_mouse in range [-1, 1]
-    // mousePos.x += 1.;
-    // mousePos.y += 1.;
-    // mousePos.y *= ratio;
-    
+    vec2 mousePos = u_mouse; // u_mouse in range [-1, 1]    
     vec2 mouseDir = normalize(mousePos - uv);
     
     float mouseDist = 1.0 - smoothstep(0.0, 1.0, distance(mousePos, uv) * 1.5);
     float offset = mouseDist * 0.1;
 
     vec2 n = vec2(0.01 * u_resolution.x, 0.01 * u_resolution.y);
-    //uv.x *= ratio;
     uv = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
     
     float r = circle(uv + mouseDir * offset, mouseDist);
