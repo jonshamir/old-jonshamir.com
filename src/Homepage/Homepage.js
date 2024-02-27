@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 import IntroSection from "./IntroSection/IntroSection";
-import BackgroundEffect from "../components/BackgroundEffect/BackgroundEffect";
 import ProjectSection from "./ProjectSection/ProjectSection";
 import FluidSim from "../components/FluidSim/FluidSim";
 
