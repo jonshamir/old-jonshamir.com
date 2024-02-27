@@ -25,6 +25,10 @@ export const FluidSim = () => {
     });
   }
 
+  useEffect(() => {
+    webglMng.setDarkTheme(isDark ? 1 : 0);
+  }, [isDark]);
+
   return <div className="BackgroundEffect" ref={canvasRef}></div>;
 };
 

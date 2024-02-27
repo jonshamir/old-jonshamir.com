@@ -1,6 +1,7 @@
 precision highp float;
 uniform sampler2D velocity;
 uniform vec2 resolution;
+uniform float darkTheme;
 varying vec2 uv;
 
 // Pi, the ratio of a circle's circumference to its diameter.
@@ -65,8 +66,7 @@ void main(){
         strength
     );
     vec3 color = clamp(vec3(r,g,b) + 0.3, 0.0, 1.0);    
-    //color = theme == 1.0 ? color : 1.0 - color;
+    color = darkTheme == 1.0 ? color : 1.0 - color;
 
     gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.6));
-    // gl_FragColor = vec4(mask, mask, mask, 1.0);
 }

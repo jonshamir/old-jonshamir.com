@@ -1,4 +1,3 @@
-// import * as THREE from "three";
 import Common from "./Common";
 import Output from "./Output";
 import Mouse from "./Mouse";
@@ -35,5 +34,11 @@ export default class Webgl {
   loop() {
     this.render();
     requestAnimationFrame(this.loop.bind(this));
+  }
+
+  setDarkTheme(darkTheme) {
+    if (this.output.output.material === undefined) return;
+    this.output.output.material.uniforms.darkTheme.value = darkTheme;
+    this.output.output.material.needsUpdate = true;
   }
 }

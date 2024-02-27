@@ -36,6 +36,9 @@ export default class Output {
           resolution: {
             value: new THREE.Vector2(Common.width, Common.height),
           },
+          darkTheme: {
+            value: 0.0,
+          },
         },
       })
     );
