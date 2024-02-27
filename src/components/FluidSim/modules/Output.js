@@ -20,6 +20,7 @@ export default class Output {
     this.output = new THREE.Mesh(
       new THREE.PlaneBufferGeometry(2, 2),
       new THREE.RawShaderMaterial({
+        transparent: true,
         vertexShader: face_vert,
         fragmentShader: grid_frag,
         extensions: {

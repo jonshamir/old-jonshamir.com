@@ -36,7 +36,7 @@ export default class Simulation {
       mouse_force: 20,
       resolution: 0.5,
       cursor_size: 50,
-      viscous: 30,
+      viscous: 10,
       isBounce: false,
       dt: 0.014,
       isViscous: true,

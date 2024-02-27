@@ -18,8 +18,8 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.004 + 0.32 * strength;
-    float minRadius = 0.04;// max(fwidth(length(p)), 0.04);
+    float baseRadius = 0.004 + 0.32 * pow(strength, 1.4);
+    float minRadius = 0.06;// max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
 	// return (1.0 - smoothstep(-fwidth(d), fwidth(d), d)) * (baseRadius / radius);
@@ -54,5 +54,5 @@ void main(){
     vec3 color = clamp(vec3(r,g,b) + 0.45, 0.0, 1.0);    
     //color = u_theme == 1.0 ? color : 1.0 - color;
 
-    gl_FragColor = vec4(color, clamp(r+g+b, 0.0, 1.0));
+    gl_FragColor = vec4(color, clamp(r+g+b, 0.0, 0.8));
 }
