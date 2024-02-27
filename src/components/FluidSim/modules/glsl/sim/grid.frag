@@ -18,7 +18,7 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.004 + 0.32 * pow(strength, 1.4);
+    float baseRadius = 0.004 + 0.1 * pow(strength, 1.8);
     float minRadius = 0.06;// max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
@@ -42,11 +42,13 @@ void main(){
     
     // grid dots
     vec2 offsetDir = vel;
-    float offset = 0.15;
-    float strength = len;
+    float offset = 0.1;
+    float strength = clamp(len, 0.0, 1.0);
 
     vec2 n = resolution.xy * 0.03;
     vec2 uv0 = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
+
+    uv0 += offsetDir * 0.2;
     
     float r = circle(uv0 + offsetDir * offset, strength);
     float g = circle(uv0 + rotate(offsetDir, M_PI_3) * offset, strength);

@@ -18,7 +18,7 @@ export default class Output {
     this.camera = new THREE.Camera();
 
     this.output = new THREE.Mesh(
-      new THREE.PlaneBufferGeometry(2, 2),
+      new THREE.PlaneBufferGeometry(1.9, 1.8),
       new THREE.RawShaderMaterial({
         transparent: true,
         vertexShader: face_vert,
