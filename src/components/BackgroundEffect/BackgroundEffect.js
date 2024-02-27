@@ -53,7 +53,7 @@ export const BackgroundEffect = (props) => {
     });
 
     var mesh = new THREE.Mesh(
-      new THREE.PlaneBufferGeometry(1, 1),
+      new THREE.PlaneBufferGeometry(2, 2),
       materialRef.current
     );
     scene.add(mesh);
