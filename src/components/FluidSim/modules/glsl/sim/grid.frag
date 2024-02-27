@@ -18,7 +18,7 @@ float sdCircle(in vec2 p, in float r)
 float circle(in vec2 p, in float strength)
 {
     float baseRadius = 0.004 + 0.1 * strength;
-    float minRadius = 0.06;// max(fwidth(length(p)), 0.04);
+    float minRadius = 0.06; // max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
 	// return (1.0 - smoothstep(-fwidth(d), fwidth(d), d)) * (baseRadius / radius);
@@ -38,25 +38,37 @@ void main(){
     float len = length(vel);
 
     // ====================================
-    
-    // grid dots
-    vec2 offsetDir = vel;
-    float offset = 0.08;
-    float strength = pow(clamp(len, 0.0, 1.0), 1.8);
 
+    // grid size
     vec2 n = resolution.xy * 0.03;
     vec2 uv0 = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
 
-    uv0 += offsetDir * 0.2;
+    // grid dots
+    vec2 offset = vel * 0.006 * n;
+    float strength = length(offset) * 10.0;
+    // float strength = pow(clamp(length(offset), 0.0, 1.0), 1.0) * 4.0;
+    // strength = 0.01;
+
+
+    // uv0 += (offset * 0.2) / resolution;
 
     vec2 uvGridIndex = ceil(uv * n) / n;
     uvGridIndex *= step(uvGridIndex, vec2((n-margin)/n));
     uvGridIndex *= 1.0 - step(uvGridIndex, vec2((margin)/n));
     float marginMask = 1.0 - step(min(uvGridIndex.x, uvGridIndex.y), 0.0);
     
-    float r = circle(uv0 + offsetDir * offset, strength);
-    float g = circle(uv0 + rotate(offsetDir, M_PI_3) * offset, strength);
-    float b = circle(uv0 + rotate(offsetDir, -M_PI_3) * offset, strength);
+    float r = circle(
+        uv0 + offset,
+        strength
+    );
+    float g = circle(
+        uv0 + rotate(offset, M_PI_3),
+        strength
+    );
+    float b = circle(
+        uv0 + rotate(offset, -M_PI_3),
+        strength
+    );
     vec3 color = clamp(vec3(r,g,b) + 0.45, 0.0, 1.0);    
     //color = theme == 1.0 ? color : 1.0 - color;
 
