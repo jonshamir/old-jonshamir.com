@@ -1,7 +1,7 @@
 $size: 4px;
 $width: 5 * $size;
 $colors-light: #ddd, #bbb, #ddd, #fff, #bbb, #fff;
-$colors-dark: #333, #000, #333, #555, #000, #555;
+$colors-dark: #2d2d2d, #000, #2d2d2d, #444, #000, #444;
 
 @function pow($number, $exponent) {
   $value: 1;
