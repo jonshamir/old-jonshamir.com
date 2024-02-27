@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useColorTheme } from "../DarkModeToggle/useColorTheme";
-import "./ContourEffect.scss";
+import "./BackgroundEffect.scss";
 
 import vertexShader from "./shader.vert";
 import fragmentShader from "./contours.frag";
@@ -9,10 +9,8 @@ import fragmentShader from "./contours.frag";
 let container;
 let camera, scene, renderer;
 let uniforms;
-const PIXEL_RATIO = 1; //window.devicePixelRatio || 1;
 
-export const ContourEffect = (props) => {
-  const { shouldDisplay } = props;
+export const BackgroundEffect = (props) => {
   const { isDark } = useColorTheme();
   const canvasRef = useRef();
   const materialRef = useRef();
@@ -21,9 +19,8 @@ export const ContourEffect = (props) => {
   useEffect(() => {
     if (!didInit) {
       initScene();
-      handleResize();
       window.addEventListener("resize", handleResize);
-      window.addEventListener("scroll", handleScroll);
+      handleResize();
       setDidInit(true);
     }
   }, [didInit, initScene]);
@@ -32,19 +29,16 @@ export const ContourEffect = (props) => {
   function initScene() {
     container = canvasRef.current;
 
-    camera = new THREE.Camera();
+    camera = new THREE.OrthographicCamera();
     camera.position.z = 1;
 
     scene = new THREE.Scene();
 
-    var geometry = new THREE.PlaneBufferGeometry(2, 2);
-
     uniforms = {
       u_time: { type: "f", value: 1.0 },
-      u_pixel_ratio: { type: "f", value: PIXEL_RATIO },
+      u_pixel_ratio: { type: "f", value: window.devicePixelRatio },
       u_resolution: { type: "v2", value: new THREE.Vector2() },
       u_mouse: { type: "v2", value: new THREE.Vector2() },
-      u_scroll: { type: "f", value: 0 },
       u_theme: { type: "f", value: isDark ? 1 : 0 },
     };
 
@@ -55,56 +49,47 @@ export const ContourEffect = (props) => {
       extensions: {
         derivatives: true,
       },
+      transparent: true,
     });
 
-    var mesh = new THREE.Mesh(geometry, materialRef.current);
+    var mesh = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(1, 1),
+      materialRef.current
+    );
     scene.add(mesh);
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
 
     container.appendChild(renderer.domElement);
 
-    document.onmousemove = function (e) {
-      uniforms.u_mouse.value.x = e.pageX;
-      uniforms.u_mouse.value.y = e.pageY;
+    document.onmousemove = (e) => {
+      uniforms.u_mouse.value.x = e.pageX / window.innerWidth;
+      uniforms.u_mouse.value.y = -(e.pageY / window.innerHeight);
+
+      console.log(uniforms.u_mouse.value.x, uniforms.u_mouse.value.y);
     };
 
     const animate = () => {
       requestAnimationFrame(animate);
-      if (props.shouldDisplay) {
-        uniforms.u_time.value += 0.03;
-        renderer.render(scene, camera);
-      }
+      uniforms.u_time.value += 0.01;
+      renderer.render(scene, camera);
     };
     animate();
   }
 
   function handleResize() {
-    const BORDER = 15 * 2 * 0;
-    const w = window.innerWidth - BORDER;
-    const h = 0.8 * window.innerHeight - BORDER;
+    const w = window.innerWidth;
+    const h = 0.8 * window.innerHeight;
     renderer.setSize(w, h);
-    uniforms.u_resolution.value.x = w;
-    uniforms.u_resolution.value.y = h;
-  }
-
-  function handleScroll() {
-    const currScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    uniforms.u_scroll.value = currScroll / 1000;
+    uniforms.u_resolution.value = { x: h, y: w };
   }
 
   if (materialRef.current) {
     materialRef.current.uniforms.u_theme.value = isDark ? 1 : 0;
   }
 
-  return (
-    <div
-      className={shouldDisplay ? "ContourEffect" : "ContourEffect hidden"}
-      ref={canvasRef}
-    ></div>
-  );
+  return <div className="BackgroundEffect" ref={canvasRef}></div>;
 };
 
-export default ContourEffect;
+export default BackgroundEffect;

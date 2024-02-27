@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 import IntroSection from "./IntroSection/IntroSection";
+import BackgroundEffect from "../components/BackgroundEffect/BackgroundEffect";
 import ProjectSection from "./ProjectSection/ProjectSection";
 
 const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
@@ -27,6 +28,7 @@ const Homepage = ({ scrollTop, setScrollTop, ...props }) => {
       onAnimationComplete={onExit}
       transition={{ duration: 0.2 }}
     >
+      <BackgroundEffect />
       <IntroSection />
       <ProjectSection />
     </motion.div>
