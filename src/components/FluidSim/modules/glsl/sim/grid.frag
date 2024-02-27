@@ -17,7 +17,7 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.004 + pow(strength, 1.5) * 0.15;
+    float baseRadius = 0.008 + pow(strength, 1.5) * 0.15;
     float minRadius = 0.06; // max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
@@ -46,11 +46,6 @@ void main(){
     // grid dots
     vec2 offset = vel * 0.006 * n;
     float strength = length(offset) * 10.0;
-    // float strength = pow(clamp(length(offset), 0.0, 1.0), 1.0) * 4.0;
-    // strength = 0.01;
-
-
-    // uv0 += (offset * 0.2) / resolution;
 
     vec2 uvGridIndex = ceil(uv * n) / n;
     uvGridIndex *= step(uvGridIndex, vec2((n-margin)/n));
@@ -72,6 +67,6 @@ void main(){
     vec3 color = clamp(vec3(r,g,b) + 0.3, 0.0, 1.0);    
     //color = theme == 1.0 ? color : 1.0 - color;
 
-    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.7));
+    gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.6));
     // gl_FragColor = vec4(mask, mask, mask, 1.0);
 }
