@@ -12,7 +12,7 @@ const IntroSection = (props) => {
           I'm a designer & developer. My interests include computer graphics,
           data visualization, web technologies and machine learning.
         </p>
-        <p>Currently building spatial interactions for Spacetop.</p>
+        <p>Currently building spatial interactions at Sightful.</p>
       </div>
     </div>
   );
