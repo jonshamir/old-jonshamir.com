@@ -48,6 +48,10 @@ export default class Output {
   }
 
   resize() {
+    this.output.material.uniforms.resolution.value.set(
+      Common.width,
+      Common.height
+    );
     this.simulation.resize();
   }
 

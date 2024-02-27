@@ -8,7 +8,7 @@ varying vec2 uv;
 // Pi, the ratio of a circle's circumference to its diameter.
 const float M_PI = 3.14159265358979323846264338327950288;
 // M_PI / 3
-const float M_PI_3 = 1.0471975512;
+const float M_PI_3 = 2.0943951024;
 
 
 float sdCircle(in vec2 p, in float r) 
@@ -42,7 +42,7 @@ void main(){
     
     // grid dots
     vec2 offsetDir = vel;
-    float offset = 0.32;
+    float offset = 0.15;
     float strength = len;
 
     vec2 n = resolution.xy * 0.03;
