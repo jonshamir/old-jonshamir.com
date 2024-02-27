@@ -66,8 +66,6 @@ export const BackgroundEffect = (props) => {
     document.onmousemove = (e) => {
       uniforms.u_mouse.value.x = (e.pageX / container.offsetWidth) * 2 - 1;
       uniforms.u_mouse.value.y = -(e.pageY / container.offsetHeight) * 2 + 1;
-
-      console.log(uniforms.u_mouse.value.x, uniforms.u_mouse.value.y);
     };
 
     const animate = () => {
