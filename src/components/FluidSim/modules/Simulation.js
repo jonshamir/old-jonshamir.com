@@ -43,7 +43,7 @@ export default class Simulation {
       BFECC: false,
     };
 
-    const controls = new Controls(this.options);
+    // const controls = new Controls(this.options);
 
     this.fboSize = new THREE.Vector2();
     this.cellScale = new THREE.Vector2();
