@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useColorTheme } from "../DarkModeToggle/useColorTheme";
 import WebGL from "./modules/WebGL";
+import "./FluidSim.scss";
 
 let container, webglMng;
 
@@ -29,7 +30,7 @@ export const FluidSim = () => {
     webglMng.setDarkTheme(isDark ? 1 : 0);
   }, [isDark]);
 
-  return <div className="BackgroundEffect" ref={canvasRef}></div>;
+  return <div className="FluidSim" ref={canvasRef}></div>;
 };
 
 export default FluidSim;
