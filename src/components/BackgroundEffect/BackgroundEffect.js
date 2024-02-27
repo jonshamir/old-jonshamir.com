@@ -4,7 +4,7 @@ import { useColorTheme } from "../DarkModeToggle/useColorTheme";
 import "./BackgroundEffect.scss";
 
 import vertexShader from "./shader.vert";
-import fragmentShader from "./contours.frag";
+import fragmentShader from "./shader.frag";
 
 let container;
 let camera, scene, renderer;
