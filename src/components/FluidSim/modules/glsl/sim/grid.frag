@@ -2,6 +2,7 @@
 
 precision highp float;
 uniform sampler2D velocity;
+uniform vec2 resolution;
 varying vec2 uv;
 
 // Pi, the ratio of a circle's circumference to its diameter.
@@ -17,7 +18,7 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float strength)
 {
-    float baseRadius = 0.004 + 0.06 * strength;
+    float baseRadius = 0.004 + 0.32 * strength;
     float minRadius = 0.04;// max(fwidth(length(p)), 0.04);
     float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
@@ -41,11 +42,10 @@ void main(){
     
     // grid dots
     vec2 offsetDir = vel;
-    float offset = 0.04;
-    float strength = 0.5;
+    float offset = 0.32;
+    float strength = len;
 
-    // vec2 n = vec2(0.01 * u_resolution.x, 0.01 * u_resolution.y);
-    vec2 n = vec2(10., 10.);
+    vec2 n = resolution.xy * 0.03;
     vec2 uv0 = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
     
     float r = circle(uv0 + offsetDir * offset, strength);

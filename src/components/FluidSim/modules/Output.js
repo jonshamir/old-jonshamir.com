@@ -32,6 +32,9 @@ export default class Output {
           boundarySpace: {
             value: new THREE.Vector2(),
           },
+          resolution: {
+            value: new THREE.Vector2(Common.width, Common.height),
+          },
         },
         // glslVersion: THREE.GLSL3,
       })
