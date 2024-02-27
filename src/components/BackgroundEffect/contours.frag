@@ -19,11 +19,11 @@ float sdCircle(in vec2 p, in float r)
 
 float circle(in vec2 p, in float mouseDist)
 {
-    float circleRadius = 0.005 + 0.06 * mouseDist;
-    float pixelRadius = fwidth(length(p));
-    float radius = max(circleRadius, pixelRadius * 2.);
+    float baseRadius = 0.004 + 0.06 * mouseDist;
+    float minRadius = 0.04;// max(fwidth(length(p)), 0.04);
+    float radius = max(baseRadius, minRadius);
     float d = sdCircle(p - vec2(0.5, 0.5), radius);
-	return (1.0 - smoothstep(0.0, fwidth(d)*2.0, d)) * (circleRadius / radius);
+	return (1.0 - smoothstep(-fwidth(d), fwidth(d), d)) * (baseRadius / radius);
 }
 
 vec2 rotate(vec2 v, float a) {
@@ -35,22 +35,21 @@ vec2 rotate(vec2 v, float a) {
 
 void main() {
     float ratio = u_resolution.x / u_resolution.y;
+    vec2 uv = (gl_FragCoord.xy - u_resolution.xy) / u_resolution.xy;
 
-    float n = 8./ratio;
-
-    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    uv.x *= ratio;
-
-    vec2 mousePos = u_mouse;
-    // mousePos.y /= ratio;
+    vec2 mousePos = u_mouse; // u_mouse in range [-1, 1]
+    // mousePos.x += 1.;
+    // mousePos.y += 1.;
+    // mousePos.y *= ratio;
     
     vec2 mouseDir = normalize(mousePos - uv);
     
     float mouseDist = 1.0 - smoothstep(0.0, 1.0, distance(mousePos, uv) * 1.5);
     float offset = mouseDist * 0.1;
 
-    
-    uv = vec2(fract(uv.x * n), fract(uv.y * n));
+    vec2 n = vec2(0.01 * u_resolution.x, 0.01 * u_resolution.y);
+    //uv.x *= ratio;
+    uv = vec2(fract(uv.x * n.x), fract(uv.y * n.y));
     
     float r = circle(uv + mouseDir * offset, mouseDist);
     float g = circle(uv + rotate(mouseDir, M_PI_3) * offset, mouseDist);
@@ -58,5 +57,5 @@ void main() {
     vec3 color = clamp(vec3(r,g,b) + 0.45, 0.0, 1.0);    
     color = u_theme == 1.0 ? color : 1.0 - color;
 
-    gl_FragColor = vec4(color, clamp(r+g+b, 0.0, 0.6));
+    gl_FragColor = vec4(color, clamp(r+g+b, 0.0, 1.0));
 }

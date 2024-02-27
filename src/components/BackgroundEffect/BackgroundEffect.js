@@ -64,8 +64,8 @@ export const BackgroundEffect = (props) => {
     container.appendChild(renderer.domElement);
 
     document.onmousemove = (e) => {
-      uniforms.u_mouse.value.x = e.pageX / window.innerWidth;
-      uniforms.u_mouse.value.y = -(e.pageY / window.innerHeight);
+      uniforms.u_mouse.value.x = (e.pageX / container.offsetWidth) * 2 - 1;
+      uniforms.u_mouse.value.y = -(e.pageY / container.offsetHeight) * 2 + 1;
 
       console.log(uniforms.u_mouse.value.x, uniforms.u_mouse.value.y);
     };
@@ -79,10 +79,10 @@ export const BackgroundEffect = (props) => {
   }
 
   function handleResize() {
-    const w = window.innerWidth;
-    const h = 0.8 * window.innerHeight;
+    const w = container.offsetWidth;
+    const h = container.offsetHeight;
     renderer.setSize(w, h);
-    uniforms.u_resolution.value = { x: h, y: w };
+    uniforms.u_resolution.value = { x: w, y: h };
   }
 
   if (materialRef.current) {
