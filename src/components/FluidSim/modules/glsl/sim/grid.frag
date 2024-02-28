@@ -66,7 +66,7 @@ void main(){
         strength
     );
     vec3 color = sqrt(clamp(vec3(r,g,b), 0.0, 1.0));
-    color = darkTheme == 1.0 ? color + 0.1 : 1.0 - color;
+    color = darkTheme == 1.0 ? color + 0.1 : 1.0 - color + 0.15;
 
     gl_FragColor = vec4(color, marginMask * clamp(r+g+b, 0.0, 0.5));
 }
