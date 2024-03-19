@@ -29,10 +29,10 @@ const HerbTree = (props) => {
           their scientific classification, creating a herbal “tree of life”.
           Each herb contains a description as well as information about using it
           in the kitchen. In addition to research, design and development, I
-          photographed dozens of plant specimens from the Hebrew University
-          Herbarium, which are incorporated into the project.
+          photographed dozens of plant specimens from the HUJI Herbarium, which
+          are incorporated into the project.
         </p>
-        <p>Note that the site is currently available only in Hebrew.</p>
+        <p>The site is currently offline but will be available soon!</p>
         <figure>
           <Image
             src="assets/projects/herbtree/specimen.jpg"
